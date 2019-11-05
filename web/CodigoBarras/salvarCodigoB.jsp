@@ -9,10 +9,11 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Cadastro de Código de Barras</title>
     </head>
     <body>
-        <form action="ServletSalvarCodigoB" method="post">7
+        <h1>Cadastro de Código de Barras</h1>
+        <form action="../ServletSalvarCodigoB" method="post">
             <table class ="table">
                 <tr>
                     Código: <input type="text" name="codigo">

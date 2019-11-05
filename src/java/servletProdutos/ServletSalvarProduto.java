@@ -8,8 +8,10 @@ package servletProdutos;
 
 import dao.DAOCodigoBarras;
 import dao.DAOProdutos;
+import entidades.CodigoDeBarras;
 import entidades.Produtos;
 import java.io.IOException;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -39,22 +41,16 @@ public class ServletSalvarProduto extends HttpServlet {
         Produtos p = new Produtos();
         DAOCodigoBarras dc = new DAOCodigoBarras();
         p.setNmProduto(request.getParameter("nome"));
+        p.setIdBarras(dc.buscaId(Integer.parseInt(request.getParameter("codigo"))));
              
-        
-        
         DAOProdutos dp = new DAOProdutos();      
-        dp.salvar(p);
-        
+        dp.salvar(p);    
     }
-    
-    
     // listar codigo de barras
-    /*
-    public List<TbCodigoDeBarras> listarCodBarras(){
-        DaoCodBarras dcb = new DaoCodBarras();
-        //return dcb.listarCB(); // está na DAOcodbarras
-        
-    }*/
+    public List<CodigoDeBarras> listarCodBarras(){
+        DAOCodigoBarras dcb = new DAOCodigoBarras();
+        return dcb.listar(); // está na DAOcodbarras    
+    }
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
