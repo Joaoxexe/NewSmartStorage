@@ -43,6 +43,7 @@ public class ServletAlterarProduto extends HttpServlet {
         p.setNmProduto(request.getParameter("nome"));
         p.setIdBarras(dc.buscaId(Integer.parseInt(request.getParameter("codigo"))));
              
+        
         DAOProdutos dp = new DAOProdutos();
         
         dp.alterar(p);

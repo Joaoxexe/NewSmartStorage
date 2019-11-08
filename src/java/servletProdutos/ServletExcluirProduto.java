@@ -37,16 +37,13 @@ public class ServletExcluirProduto extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
        
         Produtos p = new Produtos();
-        DAOCodigoBarras dc= new DAOCodigoBarras();
-        
-        int x = Integer.parseInt(request.getParameter("id"));
+        DAOCodigoBarras dc= new DAOCodigoBarras();     
         DAOProdutos dp = new DAOProdutos();
-        Produtos produtos;
-        produtos = dp.buscaId(1);
+       
         
         p.setIdProduto(Integer.parseInt(request.getParameter("id")));
-        request.setAttribute("codigo", produtos.getIdBarras());
         p.setNmProduto(request.getParameter("nome"));
+        p.setIdBarras(dc.buscaId(Integer.parseInt(request.getParameter("codigo"))));
         p.setFgAtivoProdutos(false);       
     }
 
