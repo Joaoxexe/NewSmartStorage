@@ -43,7 +43,6 @@
                             </table>
                         </div>
                         <div class="tbl-content">
-
                             <form action="../ServletListarProduto" method="post">
                                 <%
                                     ServletSalvarProduto ssp = new ServletSalvarProduto();
@@ -67,7 +66,6 @@
                                                     <a class="acao-delete" href="../ServletListarProduto?IdProduto=<%=produtos.getIdProduto()%>&tipo=2" target="_blank" rel="noopener noreferrer">
                                                         <i class="fas fa-trash"></i>
                                                     </a>
-
                                                 </td>
                                                 <td>
                                                     <%=produtos.getNmProduto()%>
@@ -102,5 +100,4 @@
 
                     });
                 </script>
-
                 </html>

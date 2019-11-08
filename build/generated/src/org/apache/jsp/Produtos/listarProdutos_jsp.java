@@ -60,9 +60,9 @@ public final class listarProdutos_jsp extends org.apache.jasper.runtime.HttpJspB
       out.write("\n");
       out.write("                    <link href=\"https://www.fontify.me/wf/822845a211e250d3989a107203e72537\" rel=\"stylesheet\" type=\"text/css\">\n");
       out.write("                    <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\" integrity=\"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T\" crossorigin=\"anonymous\">\n");
-      out.write("                    <link rel=\"stylesheet\" href=\"./css/font-awesome-all.min.css\">\n");
-      out.write("                    <link rel=\"stylesheet\" href=\"./css/loading.css\">\n");
-      out.write("                    <link rel=\"stylesheet\" href=\"./css/table.css\">\n");
+      out.write("                    <link rel=\"stylesheet\" href=\"../css/font-awesome-all.min.css\">\n");
+      out.write("                    <link rel=\"stylesheet\" href=\"../css/loading.css\">\n");
+      out.write("                    <link rel=\"stylesheet\" href=\"../css/table.css\">\n");
       out.write("                </head>\n");
       out.write("\n");
       out.write("                <body>\n");
@@ -89,7 +89,6 @@ public final class listarProdutos_jsp extends org.apache.jasper.runtime.HttpJspB
       out.write("                            </table>\n");
       out.write("                        </div>\n");
       out.write("                        <div class=\"tbl-content\">\n");
-      out.write("\n");
       out.write("                            <form action=\"../ServletListarProduto\" method=\"post\">\n");
       out.write("                                ");
 
@@ -123,7 +122,6 @@ public final class listarProdutos_jsp extends org.apache.jasper.runtime.HttpJspB
       out.write("&tipo=2\" target=\"_blank\" rel=\"noopener noreferrer\">\n");
       out.write("                                                        <i class=\"fas fa-trash\"></i>\n");
       out.write("                                                    </a>\n");
-      out.write("\n");
       out.write("                                                </td>\n");
       out.write("                                                <td>\n");
       out.write("                                                    ");
@@ -164,7 +162,6 @@ public final class listarProdutos_jsp extends org.apache.jasper.runtime.HttpJspB
       out.write("\n");
       out.write("                    });\n");
       out.write("                </script>\n");
-      out.write("\n");
       out.write("                </html>");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
