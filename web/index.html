@@ -1,56 +1,127 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<html>
-    <head>
-        <title>SMART STORAGE</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Produtos</th>
-                    <th>Código de Barras</th>
-                    <th>Endereços</th>
-                    <th>Fornecedores</th>
-                    <th>Clientes</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><a href="Produtos/salvarProduto.jsp"> Salvar Produto</a></td>
-                    <td><a href="CodigoBarras/salvarCodigoB.jsp">Salvar Barras</a></td>
-                    <td><a href="Enderecos/salvarEndereco.jsp">Salvar Endereço</a></td>
-                    <td><a href="Fornecedores/salvarFornecedor.jsp">Salvar Fornecedor</a></td>
-                    <td><a href="Clientes/salvarCliente.jsp">Salvar Cliente</a></td>
-                </tr>
-                <tr>
-                    <td><a href="Produtos/excluirProduto.jsp"> Excluir Produto</a></td>
-                    <td><a href="CodigoBarras/excluirCodigoB.jsp">Excluir Barras</a></td>
-                    <td><a href="Enderecos/excluirEndereco.jsp">Excluir Endereço</a></td>
-                    <td><a href="Fornecedores/excluirFornecedor.jsp">Excluir Fornecedor</a></td>
-                    <td><a href="Clientes/excluirCliente.jsp">Excluir Cliente</a></td>
-                </tr>
-                <tr>
-                    <td><a href="Produtos/alterarProduto.jsp"> alterar Produto</a></td>
-                    <td>....</td>
-                    <td><a href="Enderecos/alterarEndereco.jsp">alterar Endereço</a></td>
-                    <td><a href="Fornecedores/alterarFornecedor.jsp">alterar Fornecedor</a></td>
-                    <td><a href="Clientes/alterarCliente.jsp">alterar Cliente</a></td>
-                </tr>
-                <tr>
-                    <td><a href="Produtos/listarProdutos.jsp"> listar Produtos</a></td>    
-                     <td>....</td>
-                      <td>....</td>
-                    <td><a href="Fornecedores/listarFornecedores.jsp">listar Fornecedores</a></td>
-                    <td><a href="Clientes/listarClientes.jsp">listar Clientes</a></td>
-                </tr>
-            </tbody>
-        </table>
-    </body>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Smart Storage</title>
+
+    <link href="https://www.fontify.me/wf/822845a211e250d3989a107203e72537" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/font-awesome-all.min.css"> 
+    <link rel="stylesheet" href="./css/layout.css">
+    <link rel="stylesheet" href="./css/loading.css">
+</head>
+<body>
+    <div id="loading" class="background-loader">
+        <div class="loader">
+            <div class="inner one"></div>
+            <div class="inner two"></div>
+            <div class="inner three"></div>
+        </div>
+    </div>
+              
+
+    <section class="section-home">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center">
+                    <h1 class="project-name">Smart Storage</h1>
+                    <div class='icon-scroll'></div>
+                    
+                </div>
+                <div class="col-md-6">
+                    <img class="limita-imagem-home" src="../images/home.png">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section-itens-home">
+        <div class="container">
+            <div class="row">
+
+                <div class="item-menu col-md-4"> 
+                    <a href="#" target="_blank">
+                        <i class="icon fas fa-user-tie"></i>
+                        <span class="item-name">Funcionários</span>
+                    </a>
+                </div>
+                
+                <div class="item-menu col-md-4"> 
+                    <a href="#" target="_blank">
+                        <i class="icon fas fa-shopping-cart"></i>
+                        <span class="item-name">Compras</span>
+                    </a>
+                </div>
+                
+                <div class="item-menu col-md-4"> 
+                    <a href="Produtos/listarProdutos.jsp" target="_blank">
+                        <i class="icon fas fa-shopping-bag"></i>
+                        <span class="item-name">Produtos</span>
+                    </a>
+                </div>
+
+                <div class="item-menu col-md-4"> 
+                    <a href="Clientes/listarClientes.jsp" target="_blank">
+                        <i class="icon fas fa-address-card"></i>
+                        <span class="item-name">Clientes</span>
+                    </a>
+                </div>
+
+                <div class="item-menu col-md-4"> 
+                    <a href="CodigoBarras/salvarCodigoB.jsp" target="_blank">
+                        <i class="icon fas fa-barcode"></i>
+                        <span class="item-name">Códigos de Barras</span>
+                    </a>
+                </div>
+
+                <div class="item-menu col-md-4"> 
+                    <a href="Fornecedores/listarFornecedores.jsp" target="_blank">
+                        <i class="icon fas fa-briefcase"></i>
+                        <span class="item-name">Fornecedores</span>
+                    </a>
+                </div>
+
+                <div class="item-menu col-md-4"> 
+                    <a href="#" target="_blank">
+                        <i class="icon fas fa-archive"></i>
+                        <span class="item-name">Movimentações</span>
+                    </a>
+                </div>
+
+                <div class="item-menu col-md-4"> 
+                    <a href="#" target="_blank">
+                        <i class="icon fas fa-door-open"></i>
+                        <span class="item-name">Entradas</span>
+                    </a>
+                </div>
+
+                <div class="item-menu col-md-4"> 
+                    <a href="#" target="_blank">
+                        <i class="icon fas fa-sign-in-alt"></i>
+                        <span class="item-name">Saídas</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="./js/font-awesome-min.js"></script>
+
+<script>
+    $(document).ready(function() {
+        setTimeout( () => {
+            $('#loading').remove();
+        }, 2000);
+    });
+</script>
+
 </html>
+
+
+
+
+                  

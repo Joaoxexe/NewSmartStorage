@@ -42,6 +42,7 @@ public class ServletSalvarCodigoB extends HttpServlet {
         DAOCodigoBarras dcb = new DAOCodigoBarras();
         
         dcb.salvar(cb);
+        response.sendRedirect("Produtos/salvarProduto.jsp");
         
     }
 

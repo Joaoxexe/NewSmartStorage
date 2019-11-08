@@ -44,7 +44,9 @@ public class ServletSalvarProduto extends HttpServlet {
         p.setIdBarras(dc.buscaId(Integer.parseInt(request.getParameter("codigo"))));
              
         DAOProdutos dp = new DAOProdutos();      
-        dp.salvar(p);    
+        dp.salvar(p);  
+        
+        response.sendRedirect("Produto/listarProdutos.jsp");
     }
     // listar codigo de barras
     public List<CodigoDeBarras> listarCodBarras(){
