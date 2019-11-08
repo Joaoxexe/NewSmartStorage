@@ -51,6 +51,11 @@ public class ServletSalvarProduto extends HttpServlet {
         DAOCodigoBarras dcb = new DAOCodigoBarras();
         return dcb.listar(); // está na DAOcodbarras    
     }
+    
+    public List<Produtos> listarProdutos(){
+        DAOProdutos dp = new DAOProdutos();
+        return dp.listar(); // está na DAOcodbarras    
+    }
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.

@@ -19,7 +19,8 @@
                     Código: <input type="text" name="codigo">
                 </tr>
                 <tr>
-                    <input type="submit" value="Salvar">
+                    <input type="submit" value="Salvar Código">
+                    <td><a href="../Produtos/salvarProduto.jsp">Cadastrar um Produto</a></td>
                 </tr>               
             </table>          
         </form>

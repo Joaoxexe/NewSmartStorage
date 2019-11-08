@@ -5,6 +5,7 @@
  */
 package servletProdutos;
 
+import dao.DAOCodigoBarras;
 import dao.DAOProdutos;
 import entidades.Produtos;
 import java.io.IOException;
@@ -35,8 +36,10 @@ public class ServletAlterarProduto extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         Produtos p = new Produtos();
-        
+        DAOCodigoBarras dc = new DAOCodigoBarras();
+        p.setIdProduto(Integer.parseInt(request.getParameter("id")));
         p.setNmProduto(request.getParameter("nome"));
+        p.setIdBarras(dc.buscaId(Integer.parseInt(request.getParameter("codigo"))));
              
         DAOProdutos dp = new DAOProdutos();
         

@@ -5,6 +5,8 @@
  */
 package servletProdutos;
 
+import dao.DAOProdutos;
+import entidades.Produtos;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -32,18 +34,26 @@ public class ServletListarProduto extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet ServletListarProduto</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet ServletListarProduto at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+        
+        int x = Integer.parseInt(request.getParameter("IdProduto"));
+        DAOProdutos dp = new DAOProdutos();
+        Produtos produtos;
+        produtos = dp.buscaId(x);
+        
+        request.setAttribute("id", produtos.getIdProduto());
+        request.setAttribute("nome", produtos.getNmProduto());
+        request.setAttribute("idBarras", produtos.getIdBarras());
+        
+        int tipo = Integer.parseInt(request.getParameter("tipo"));
+        
+        if(tipo == 1){
+            request.getRequestDispatcher("/Produtos/alterarProduto.jsp").forward(request, response);
         }
+        else 
+            if(tipo == 2){
+             request.getRequestDispatcher("/Produtos/excluirProduto.jsp").forward(request, response);
+        }
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
