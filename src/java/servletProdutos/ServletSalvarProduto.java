@@ -46,7 +46,7 @@ public class ServletSalvarProduto extends HttpServlet {
         DAOProdutos dp = new DAOProdutos();      
         dp.salvar(p);  
         
-        response.sendRedirect("Produto/listarProdutos.jsp");
+        response.sendRedirect("Produtos/listarProdutos.jsp");
     }
     // listar codigo de barras
     public List<CodigoDeBarras> listarCodBarras(){

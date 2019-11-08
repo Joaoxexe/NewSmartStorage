@@ -6,6 +6,7 @@
 package servletProdutos;
 
 import dao.DAOCodigoBarras;
+import dao.DAOProdutos;
 import entidades.Produtos;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -37,10 +38,16 @@ public class ServletExcluirProduto extends HttpServlet {
        
         Produtos p = new Produtos();
         DAOCodigoBarras dc= new DAOCodigoBarras();
+        
+        int x = Integer.parseInt(request.getParameter("id"));
+        DAOProdutos dp = new DAOProdutos();
+        Produtos produtos;
+        produtos = dp.buscaId(1);
+        
         p.setIdProduto(Integer.parseInt(request.getParameter("id")));
-        p.setIdBarras(dc.buscaId(Integer.parseInt(request.getParameter("codigo"))));
+        request.setAttribute("codigo", produtos.getIdBarras());
         p.setNmProduto(request.getParameter("nome"));
-        p.setFgAtivoProdutos(Boolean.FALSE);       
+        p.setFgAtivoProdutos(false);       
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

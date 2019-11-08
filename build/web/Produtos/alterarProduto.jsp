@@ -27,7 +27,7 @@
                 <tr>
                     Codigo de barras: 
                         <select name="codigo">
-                        <option selected="selected">Selecione</option>
+                        <option selected="selected" value=""><%out.print(request.getAttribute("codigo")); %></option>
                         <%
                            ServletSalvarProduto ssp = new ServletSalvarProduto();
                            List<CodigoDeBarras> listaBarras = ssp.listarCodBarras();

@@ -35,8 +35,10 @@ public class ServletAlterarProduto extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        
         Produtos p = new Produtos();
         DAOCodigoBarras dc = new DAOCodigoBarras();
+        
         p.setIdProduto(Integer.parseInt(request.getParameter("id")));
         p.setNmProduto(request.getParameter("nome"));
         p.setIdBarras(dc.buscaId(Integer.parseInt(request.getParameter("codigo"))));
