@@ -3,7 +3,7 @@
 <%@page import="servletProdutos.ServletSalvarProduto"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
-              <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">

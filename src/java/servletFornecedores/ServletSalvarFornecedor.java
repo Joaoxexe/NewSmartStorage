@@ -6,10 +6,13 @@
 package servletFornecedores;
 
 
+import dao.DAOCodigoBarras;
 import dao.DAOEnderecos;
 import dao.DAOFornecedores;
+import dao.DAOProdutos;
 import entidades.Enderecos;
 import entidades.Fornecedores;
+import entidades.Produtos;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
@@ -38,18 +41,22 @@ public class ServletSalvarFornecedor extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet ServletSalvarFornecedor</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet ServletSalvarFornecedor at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        }
+        
+        Fornecedores f = new Fornecedores();
+        DAOEnderecos de = new DAOEnderecos();
+        f.setNmFornecedor(request.getParameter("nome"));
+        f.setNmFantasiaFornecedor(request.getParameter("fantasia"));
+        f.setTelefoneFornecedor(request.getParameter("telefone"));
+        f.setCnpjFornecedor(request.getParameter("cnpj"));
+        f.setEmailFornecedor(request.getParameter("email"));
+        f.setNumeroEnderecoFornecedor(Integer.parseInt(request.getParameter("numeroEnd")));
+        f.setFgAtivoFornecedore(Boolean.TRUE);
+        f.setIdEndereco(de.buscaIdEndereco(Integer.parseInt(request.getParameter("idEnd"))));       
+        
+        DAOFornecedores df = new DAOFornecedores();      
+        df.salvar(f);       
+        
+        response.sendRedirect("Fornecedores/listarFornecedores.jsp");
     }
     
     public List<Enderecos> listarEnderecos(){

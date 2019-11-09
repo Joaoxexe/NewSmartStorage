@@ -49,8 +49,8 @@
             <form action="../ServletSalvarProduto">
                 <table cellpadding="0" cellspacing="0" border="0">
                     <tr>
-                        <td>Nome:
-                            <input type="text" name="nome">
+                        <td>
+                            Nome:<input type="text" name="nome">
                         </td>
                         <td>
                             Codigo de barras:
