@@ -10,6 +10,7 @@ import dao.DAOProdutos;
 import entidades.Produtos;
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -46,7 +47,9 @@ public class ServletAlterarProduto extends HttpServlet {
         
         DAOProdutos dp = new DAOProdutos();
         
-        dp.alterar(p);
+        dp.alterar(p);      
+     
+        response.sendRedirect("Produtos/listarProdutos.jsp");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

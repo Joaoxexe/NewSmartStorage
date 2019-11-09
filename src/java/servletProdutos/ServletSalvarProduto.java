@@ -12,6 +12,7 @@ import entidades.CodigoDeBarras;
 import entidades.Produtos;
 import java.io.IOException;
 import java.util.List;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -44,7 +45,7 @@ public class ServletSalvarProduto extends HttpServlet {
         p.setIdBarras(dc.buscaId(Integer.parseInt(request.getParameter("codigo"))));
              
         DAOProdutos dp = new DAOProdutos();      
-        dp.salvar(p);  
+        dp.salvar(p);       
         
         response.sendRedirect("Produtos/listarProdutos.jsp");
     }

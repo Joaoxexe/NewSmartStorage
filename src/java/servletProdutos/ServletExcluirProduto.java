@@ -10,6 +10,7 @@ import dao.DAOProdutos;
 import entidades.Produtos;
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -44,7 +45,9 @@ public class ServletExcluirProduto extends HttpServlet {
         p.setIdProduto(Integer.parseInt(request.getParameter("id")));
         p.setNmProduto(request.getParameter("nome"));
         p.setIdBarras(dc.buscaId(Integer.parseInt(request.getParameter("codigo"))));
-        p.setFgAtivoProdutos(false);       
+        p.setFgAtivoProdutos(false);      
+        
+        response.sendRedirect("Produtos/listarProdutos.jsp");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

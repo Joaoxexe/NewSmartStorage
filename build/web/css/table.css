@@ -85,3 +85,20 @@ body {
 .acao-delete:hover{
     color: #b14a66;
 }
+
+    a:hover{	
+	font-family: 'Teko';
+	
+	color: white;
+        text-shadow: -1px 0 #fff, 0 1px white;
+        animation: blinker 0.5s infinite;
+        text-decoration: none;
+    }
+		
+    a{	
+	font-family: 'Teko';
+	text-shadow: -3px 0 #000, 0 3px #000;
+	font-size: 22px;
+	text-decoration: none;
+	color: #999;		
+    }
