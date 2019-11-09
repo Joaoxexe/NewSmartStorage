@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package servletCodigoB_PRONTO;
+package servletCodigoB;
 
 import dao.DAOCodigoBarras;
 import entidades.CodigoDeBarras;
@@ -42,8 +42,7 @@ public class ServletSalvarCodigoB extends HttpServlet {
         DAOCodigoBarras dcb = new DAOCodigoBarras();
         
         dcb.salvar(cb);
-        response.sendRedirect("Produtos/salvarProduto.jsp");
-        
+        response.sendRedirect("Produtos/salvarProduto.jsp");      
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

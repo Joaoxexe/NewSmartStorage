@@ -43,7 +43,7 @@ public class ServletSalvarProduto extends HttpServlet {
         DAOCodigoBarras dc = new DAOCodigoBarras();
         p.setNmProduto(request.getParameter("nome"));
         p.setIdBarras(dc.buscaId(Integer.parseInt(request.getParameter("codigo"))));
-             
+        p.setFgAtivoProdutos(Boolean.TRUE);
         DAOProdutos dp = new DAOProdutos();      
         dp.salvar(p);       
         

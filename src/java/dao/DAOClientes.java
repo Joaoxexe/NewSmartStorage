@@ -14,7 +14,7 @@ import java.util.List;
  * @author João Victor
  */
 public class DAOClientes extends DAOControl{
-    public List<Clientes> listar(){      
+    public List<Clientes> listarClientes(){      
         this.abreConexao();
         List<Clientes> clientes;
         clientes = em.createQuery("select c from Clientes as c").getResultList();
@@ -22,7 +22,7 @@ public class DAOClientes extends DAOControl{
         return clientes;      
     }
     
-    public Clientes buscaId(int Id){
+    public Clientes buscaIdCliente(int Id){
         this.abreConexao();
         Clientes clientes = em.find(Clientes.class, Id);
         this.fechaConexao();

@@ -44,8 +44,8 @@ public class ServletExcluirProduto extends HttpServlet {
         
         p.setIdProduto(Integer.parseInt(request.getParameter("id")));
         p.setNmProduto(request.getParameter("nome"));
-        p.setIdBarras(dc.buscaId(Integer.parseInt(request.getParameter("codigo"))));
-        p.setFgAtivoProdutos(false);      
+        p.setIdBarras(dc.buscaId(Integer.parseInt(request.getParameter("codigo"))));   
+        dp.remover(p);
         
         response.sendRedirect("Produtos/listarProdutos.jsp");
     }

@@ -13,7 +13,7 @@ import java.util.List;
  * @author João Victor
  */
 public class DAOEnderecos extends DAOControl{
-        public List<Enderecos> listar(){      
+    public List<Enderecos> listarEnderecos(){      
         this.abreConexao();
         List<Enderecos> enderecos;
         enderecos = em.createQuery("select e from Enderecos as e").getResultList();
@@ -21,7 +21,7 @@ public class DAOEnderecos extends DAOControl{
         return enderecos;      
     }
     
-    public Enderecos buscaId(int Id){
+    public Enderecos buscaIdEndereco(int Id){
         this.abreConexao();
         Enderecos enderecos = em.find(Enderecos.class, Id);
         this.fechaConexao();

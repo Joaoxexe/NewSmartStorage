@@ -51,12 +51,11 @@ public final class listarProdutos_jsp extends org.apache.jasper.runtime.HttpJspB
       out.write("\r\n");
       out.write("              <!DOCTYPE html>\r\n");
       out.write("<html lang=\"pt-br\">\r\n");
-      out.write("\r\n");
       out.write("<head>\r\n");
       out.write("    <meta charset=\"UTF-8\">\r\n");
       out.write("    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n");
       out.write("    <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">\r\n");
-      out.write("    <title>Listar Produtos</title>\r\n");
+      out.write("    <title>Produtos</title>\r\n");
       out.write("\r\n");
       out.write("    <link href=\"https://www.fontify.me/wf/822845a211e250d3989a107203e72537\" rel=\"stylesheet\" type=\"text/css\">\r\n");
       out.write("    <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\" integrity=\"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T\" crossorigin=\"anonymous\">\r\n");
@@ -64,7 +63,6 @@ public final class listarProdutos_jsp extends org.apache.jasper.runtime.HttpJspB
       out.write("    <link rel=\"stylesheet\" href=\"css/loading.css\">\r\n");
       out.write("    <link rel=\"stylesheet\" href=\"css/table.css\">\r\n");
       out.write("</head>\r\n");
-      out.write("\r\n");
       out.write("<body>\r\n");
       out.write("    <div id=\"loading\" class=\"background-loader\">\r\n");
       out.write("        <div class=\"loader\">\r\n");
@@ -73,9 +71,9 @@ public final class listarProdutos_jsp extends org.apache.jasper.runtime.HttpJspB
       out.write("            <div class=\"inner three\"></div>\r\n");
       out.write("        </div>\r\n");
       out.write("    </div>\r\n");
-      out.write("\r\n");
       out.write("    <div defer class=\"container pt-5 pb-2\">\r\n");
       out.write("        <h1 class=\"pb-3\">Produtos</h1>\r\n");
+      out.write("        <td><a href=\"../Produtos/salvarProduto.jsp\"> Novo Produto</a></td>          \r\n");
       out.write("        <div class=\"tbl-header\">\r\n");
       out.write("            <table cellpadding=\"0\" cellspacing=\"0\" border=\"0\">\r\n");
       out.write("                <thead>\r\n");
@@ -84,6 +82,7 @@ public final class listarProdutos_jsp extends org.apache.jasper.runtime.HttpJspB
       out.write("                        <th>Ações</th>\r\n");
       out.write("                        <th>Nome do produto</th>\r\n");
       out.write("                        <th>Código de barras</th>\r\n");
+      out.write("                        <th>Situação</th>\r\n");
       out.write("                    </tr>\r\n");
       out.write("                </thead>\r\n");
       out.write("            </table>\r\n");
@@ -92,16 +91,16 @@ public final class listarProdutos_jsp extends org.apache.jasper.runtime.HttpJspB
       out.write("            <form action=\"../ServletListarProduto\" method=\"post\">\r\n");
       out.write("                ");
 
-                                    ServletSalvarProduto ssp = new ServletSalvarProduto();
-                                    List<Produtos> getList = ssp.listarProdutos();
-                                
+                    ServletSalvarProduto ssp = new ServletSalvarProduto();
+                    List<Produtos> getList = ssp.listarProdutos();
+                
       out.write("\r\n");
       out.write("                    <table cellpadding=\"0\" cellspacing=\"0\" border=\"0\">\r\n");
       out.write("                        <tbody>\r\n");
       out.write("                            ");
                  
-                                            for(Produtos produtos : getList ){
-                                        
+                                for(Produtos produtos : getList ){
+                            
       out.write("\r\n");
       out.write("                                <tr>\r\n");
       out.write("                                    <td>\r\n");
@@ -132,6 +131,11 @@ public final class listarProdutos_jsp extends org.apache.jasper.runtime.HttpJspB
       out.write("                                        ");
       out.print(produtos.getIdBarras().getCodigo());
       out.write("\r\n");
+      out.write("                                    </td>            \r\n");
+      out.write("                                    <td>\r\n");
+      out.write("                                        ");
+      out.print(produtos.getFgAtivoProdutos());
+      out.write("\r\n");
       out.write("                                    </td>\r\n");
       out.write("                                </tr>\r\n");
       out.write("                                ");
@@ -139,31 +143,29 @@ public final class listarProdutos_jsp extends org.apache.jasper.runtime.HttpJspB
       out.write("                                \r\n");
       out.write("                        </tbody>\r\n");
       out.write("                    </table>\r\n");
-      out.write("        </div>\r\n");
-      out.write("\r\n");
+      out.write("            </form>\r\n");
+      out.write("        </div>        \r\n");
       out.write("    </div>\r\n");
       out.write("</body>\r\n");
       out.write("<script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\" integrity=\"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo\" crossorigin=\"anonymous\"></script>\r\n");
       out.write("<script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js\" integrity=\"sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1\" crossorigin=\"anonymous\"></script>\r\n");
       out.write("<script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js\" integrity=\"sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM\" crossorigin=\"anonymous\"></script>\r\n");
-      out.write("<script src=\"./js/font-awesome-min.js\"></script>\r\n");
+      out.write("<script src=\"css/font-awesome-min.js\"></script>\r\n");
+      out.write("    <script>\r\n");
+      out.write("        $(document).ready(function() {\r\n");
+      out.write("            setTimeout(() => {\r\n");
+      out.write("                $('#loading').remove();\r\n");
+      out.write("            }, 1000);\r\n");
       out.write("\r\n");
-      out.write("<script>\r\n");
-      out.write("    $(document).ready(function() {\r\n");
-      out.write("        setTimeout(() => {\r\n");
-      out.write("            $('#loading').remove();\r\n");
-      out.write("        }, 1000);\r\n");
+      out.write("            $(window).on(\"load resize\", function() {\r\n");
+      out.write("                var scrollWidth = $('.tbl-content').width() - $('.tbl-content table').width();\r\n");
+      out.write("                $('.tbl-header').css({\r\n");
+      out.write("                    'padding-right': scrollWidth\r\n");
+      out.write("                });\r\n");
+      out.write("            }).resize();\r\n");
       out.write("\r\n");
-      out.write("        $(window).on(\"load resize\", function() {\r\n");
-      out.write("            var scrollWidth = $('.tbl-content').width() - $('.tbl-content table').width();\r\n");
-      out.write("            $('.tbl-header').css({\r\n");
-      out.write("                'padding-right': scrollWidth\r\n");
-      out.write("            });\r\n");
-      out.write("        }).resize();\r\n");
-      out.write("\r\n");
-      out.write("    });\r\n");
-      out.write("</script>\r\n");
-      out.write("\r\n");
+      out.write("        });\r\n");
+      out.write("    </script>\r\n");
       out.write("</html>");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){

@@ -3,14 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package servletFornecedores;
 
-package servletProdutos;
 
-import dao.DAOProdutos;
-import entidades.Produtos;
+import dao.DAOEnderecos;
+import dao.DAOFornecedores;
+import entidades.Enderecos;
+import entidades.Fornecedores;
 import java.io.IOException;
 import java.io.PrintWriter;
-import javax.servlet.RequestDispatcher;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -21,8 +23,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author João Victor
  */
-@WebServlet(name = "ServletListarProduto", urlPatterns = {"/ServletListarProduto"})
-public class ServletListarProduto extends HttpServlet {
+@WebServlet(name = "ServletSalvarFornecedor", urlPatterns = {"/ServletSalvarFornecedor"})
+public class ServletSalvarFornecedor extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -36,28 +38,28 @@ public class ServletListarProduto extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        
-        int x = Integer.parseInt(request.getParameter("IdProduto"));
-        DAOProdutos dp = new DAOProdutos();
-        Produtos produtos;
-        produtos = dp.buscaId(x);
-        
-        request.setAttribute("id", produtos.getIdProduto());
-        request.setAttribute("nome", produtos.getNmProduto());
-        request.setAttribute("idBarras", produtos.getIdBarras());
-        request.setAttribute("situacao", produtos.getFgAtivoProdutos());
-  
-  
-        int tipo = Integer.parseInt(request.getParameter("tipo"));
-        
-        if(tipo == 1){
-            request.getRequestDispatcher("/Produtos/alterarProduto.jsp").forward(request, response);
+        try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet ServletSalvarFornecedor</title>");            
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet ServletSalvarFornecedor at " + request.getContextPath() + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
         }
-        else 
-            if(tipo == 2){
-             request.getRequestDispatcher("/Produtos/excluirProduto.jsp").forward(request, response);
-        }
-        
+    }
+    
+    public List<Enderecos> listarEnderecos(){
+        DAOEnderecos de = new DAOEnderecos();
+        return de.listarEnderecos();    
+    }
+    
+    public List<Fornecedores> listarFornecedores(){
+        DAOFornecedores df = new DAOFornecedores();
+        return df.listarForenecedores();    
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

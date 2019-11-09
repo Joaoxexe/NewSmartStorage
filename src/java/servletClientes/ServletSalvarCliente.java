@@ -5,8 +5,13 @@
  */
 package servletClientes;
 
+import dao.DAOClientes;
+import dao.DAOEnderecos;
+import entidades.Clientes;
+import entidades.Enderecos;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -44,6 +49,16 @@ public class ServletSalvarCliente extends HttpServlet {
             out.println("</body>");
             out.println("</html>");
         }
+    }
+    
+    public List<Enderecos> listarEnderecos(){
+        DAOEnderecos de = new DAOEnderecos();
+        return de.listarEnderecos(); 
+    }
+    
+    public List<Clientes> listarFornecedores(){
+        DAOClientes dc = new DAOClientes();
+        return dc.listarClientes();     
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

@@ -8,7 +8,7 @@ package servletEnderecos;
 import dao.DAOEnderecos;
 import entidades.Enderecos;
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -49,6 +49,13 @@ public class ServletSalvarEndereco extends HttpServlet {
         DAOEnderecos de = new DAOEnderecos();
         de.salvar(endereco);
     }
+    
+    public List<Enderecos> listarEnderecos(){
+        DAOEnderecos de = new DAOEnderecos();
+        return de.listarEnderecos();    
+    }
+    
+   
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
