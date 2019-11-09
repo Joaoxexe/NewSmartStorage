@@ -6,7 +6,7 @@
 <%@page import="entidades.Enderecos"%>
 <%@page import="servletFornecedores.ServletSalvarFornecedor"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-                        <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
@@ -32,6 +32,7 @@
     </div>
     <div defer class="container pt-5 pb-2">
         <h1 class="pb-3">Cadastro de Fornecedor</h1>
+        <td><a href="../index.html">Pagina Inicial</a></td>
         <div class="tbl-header">
             <table cellpadding="0" cellspacing="0" border="0">
                 <thead>
@@ -41,8 +42,11 @@
                         <th>Telefone</th>
                         <th>CNPJ</th>
                         <th>E-mail</th>              
-                        <th>Código Endereço</th> 
-                        <th>Nº Endereço</th>
+                        <th>
+                            Nº Endereço
+                            Endereço         
+                        </th> 
+                        
                     </tr>
                 </thead>
             </table>
@@ -65,8 +69,9 @@
                         </td>
                         <td>
                             E-mail:<input type="text" name="email">
-                        </td>                     
+                        </td> 
                         <td>
+                            Nº Endereço:<input type="text" name="numeroEnd">
                             Endereço:
                             <select name="idEnd">
                                 <option selected="selected">Selecione</option>
@@ -86,10 +91,7 @@
                                     
                                       <%}%>    
                             </select>                    
-                        </td>
-                        <td>
-                            Nº Endereço:<input type="text" name="numeroEnd">
-                        </td>
+                        </td>                       
                     </tr>
                     <tr>
                         <td>

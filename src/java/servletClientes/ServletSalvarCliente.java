@@ -11,6 +11,8 @@ import entidades.Clientes;
 import entidades.Enderecos;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -37,18 +39,35 @@ public class ServletSalvarCliente extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet ServletSalvarCliente</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet ServletSalvarCliente at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+        Clientes c = new Clientes();
+        DAOClientes dc = new DAOClientes();
+        c.setNmCliente(request.getParameter("nome"));
+        c.setTelefoneCliente(request.getParameter("telefone"));
+              
+        String data_nasc;
+        data_nasc = (request.getParameter("data"));
+        Date data = new Date(data_nasc);
+        c.setDtNascimentoCliente(data);
+    
+        if(request.getParameter("sexo") == "Masculino"){
+            c.setSexoCliente('M');
         }
+        else if (request.getParameter("sexo") == "Feminino"){
+            c.setSexoCliente('F');
+        } 
+        else{
+            c.setSexoCliente('O');
+        }
+        c.setCpfCliente(request.getParameter("cpf"));
+        
+        c.setNumeroEnderecoCliente(Integer.parseInt(request.getParameter("numeroEnd")));
+        c.setFgAtivoCliente(Boolean.TRUE);
+        
+        DAOEnderecos de = new DAOEnderecos();
+        c.setIdEndereco(de.buscaIdEndereco(Integer.parseInt(request.getParameter("idEnd"))));       
+        
+        response.sendRedirect("Clientes/listarClientes.jsp");
+        dc.salvar(c);       
     }
     
     public List<Enderecos> listarEnderecos(){
@@ -56,7 +75,7 @@ public class ServletSalvarCliente extends HttpServlet {
         return de.listarEnderecos(); 
     }
     
-    public List<Clientes> listarFornecedores(){
+    public List<Clientes> listarClientes(){
         DAOClientes dc = new DAOClientes();
         return dc.listarClientes();     
     }

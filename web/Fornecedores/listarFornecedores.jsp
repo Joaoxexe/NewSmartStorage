@@ -32,6 +32,7 @@
     </div>
     <div defer class="container pt-5 pb-2">
         <h1 class="pb-3">Fornecedores</h1>
+        <td><a href="../index.html">Pagina Inicial</a></td>
         <td><a href="../Fornecedores/salvarFornecedor.jsp"> Novo Fornecedor</a></td>          
         <div class="tbl-header">
             <table cellpadding="0" cellspacing="0" border="0">

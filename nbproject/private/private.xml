@@ -18,9 +18,11 @@
             <file>file:/C:/Users/João%20Victor/Desktop/aps/NewSmartStorage/src/java/servletProdutos/ServletListarProduto.java</file>
             <file>file:/C:/Users/João%20Victor/Desktop/aps/NewSmartStorage/web/Fornecedores/listarFornecedores.jsp</file>
             <file>file:/C:/Users/João%20Victor/Desktop/aps/NewSmartStorage/src/java/servletCodigoB/ServletSalvarCodigoB.java</file>
+            <file>file:/C:/Users/João%20Victor/Desktop/aps/NewSmartStorage/web/Fornecedores/css/table.css</file>
             <file>file:/C:/Users/João%20Victor/Desktop/aps/NewSmartStorage/web/CodigoBarras/salvarCodigoB.jsp</file>
             <file>file:/C:/Users/João%20Victor/Desktop/aps/NewSmartStorage/src/java/servletFornecedores/ServletSalvarFornecedor.java</file>
             <file>file:/C:/Users/João%20Victor/Desktop/aps/NewSmartStorage/web/Fornecedores/salvarFornecedor.jsp</file>
+            <file>file:/C:/Users/João%20Victor/Desktop/aps/NewSmartStorage/web/Enderecos/salvarEndereco.jsp</file>
             <file>file:/C:/Users/João%20Victor/Desktop/aps/NewSmartStorage/web/Produtos/alterarProduto.jsp</file>
             <file>file:/C:/Users/João%20Victor/Desktop/aps/NewSmartStorage/src/java/servletFornecedores/ServletListarFornecedores.java</file>
             <file>file:/C:/Users/João%20Victor/Desktop/aps/NewSmartStorage/src/java/dao/DAOControl.java</file>
@@ -37,6 +39,7 @@
             <file>file:/C:/Users/João%20Victor/Desktop/aps/NewSmartStorage/web/Produtos/salvarProduto.jsp</file>
             <file>file:/C:/Users/João%20Victor/Desktop/aps/NewSmartStorage/src/java/servletProdutos/ServletSalvarProduto.java</file>
             <file>file:/C:/Users/João%20Victor/Desktop/aps/NewSmartStorage/web/Fornecedores/css/bootstrap.css</file>
+            <file>file:/C:/Users/João%20Victor/Desktop/aps/NewSmartStorage/web/Clientes/salvarCliente.jsp</file>
             <file>file:/C:/Users/João%20Victor/Desktop/aps/NewSmartStorage/web/Fornecedores/excluirFornecedor.jsp</file>
         </group>
     </open-files>

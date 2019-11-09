@@ -30,6 +30,7 @@
     </div>
     <div defer class="container pt-5 pb-2">
         <h1 class="pb-3">Exclusão de Fornecedor</h1>
+        <td><a href="../index.html">Pagina Inicial</a></td>
         <div class="tbl-header">
             <table cellpadding="0" cellspacing="0" border="0">
                 <thead>
