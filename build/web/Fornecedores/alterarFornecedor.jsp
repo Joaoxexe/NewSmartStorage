@@ -38,59 +38,64 @@
                         <th>Nome do Fornecedor</th>
                         <th>Nome Fantasia</th>
                         <th>Telefone</th>
-                        <th>CNPJ</th>
                         <th>E-mail</th>              
-                        <th>Código Endereço</th> 
+                        <th>Endereço</th> 
                         <th>Nº Endereço</th>
                     </tr>
                 </thead>
             </table>
         </div>
         <div class="tbl-content">
-            <form action="../ServletAlterarFornecedor">
+            <form action="ServletAlterarFornecedor" method="post">
                 <table cellpadding="0" cellspacing="0" border="0">
                     <tr>
                         <td>
-                            ID do Fornecedor: <input type="text" name="id" value="<%out.print(request.getAttribute("id")) ;%>" readonly="true">
+                            ID do Fornecedor: <input type="text" name="id" value="<%=(request.getAttribute("id")) %>" readonly="true">
                         </td>
                         <td>
-                            Nome do Fornecedor: <input type="text" name="nome" value="<%out.print(request.getAttribute("nome"));%>">
+                            Nome do Fornecedor: <input type="text" name="nome" value="<%=(request.getAttribute("nome"))%>">
                         </td>
                         <td>
-                            Nome Fantasia: <input type="text" name="fantasia" value="<%out.print(request.getAttribute("fantasia"));%>">
+                            Nome Fantasia: <input type="text" name="fantasia" value="<%=(request.getAttribute("fantasia"))%>">
                         </td>
                         <td>
-                            Telefone: <input type="text" name="telefone" value="<%out.print(request.getAttribute("telefone"));%>">
-                        </td>
+                            Telefone: <input type="text" name="telefone" value="<%=(request.getAttribute("telefone"))%>">
+                        </td>                       
                         <td>
-                            CNPJ: <input type="text" name="cnpj" value="<%out.print(request.getAttribute("cnpj"));%>">
-                        </td>
-                        <td>
-                            E-mail: <input type="text" name="email" value="<%out.print(request.getAttribute("email"));%>">
+                            E-mail: <input type="text" name="email" value="<%=(request.getAttribute("email"))%>">
                         </td> 
                         <td>
                             Endereço:
-                            <select name="idEnd">
+                            <select name="cmbEndereco">
                                 <option selected="selected">Selecione</option>
                                 <%
                                     ServletSalvarFornecedor ssf = new ServletSalvarFornecedor();
                                     List<Enderecos> listaEnd = ssf.listarEnderecos();
 
-                                        for(Enderecos enderecos : listaEnd){                                                   
+                                        for(Enderecos enderecos : listaEnd){               
                                 %>
-                                    <option value="<%out.print(request.getAttribute("idEnd"));%>">
+                                    <option selected="selected" value="<%=enderecos.getIdEndereco()%>">
+                                            <%out.print(enderecos.getTipoLogradouroEndereco() + " " +
+                                                            enderecos.getLogradouroEndereco() + ", " +
+                                                            enderecos.getBairroEndereco() + ", " +
+                                                            enderecos.getCidadeEndereco() + ", " +
+                                                            enderecos.getCepEndereco()); %>
+                                    </option>
+             
+                                    <option value="<%=enderecos.getIdEndereco()%>">
                                             <%out.print(enderecos.getTipoLogradouroEndereco() + " " +
                                                         enderecos.getLogradouroEndereco() + ", " +
                                                         enderecos.getBairroEndereco() + ", " +
                                                         enderecos.getCidadeEndereco() + ", " +
                                                         enderecos.getCepEndereco()); %>
                                     </option>
-                                    
-                                      <%}%>    
+                                <%
+                                    }
+                                %>    
                             </select>                    
                         </td>
                         <td>
-                            Nº Endereço: <input type="text" name="numeroEnd" value="<%out.print(request.getAttribute("numeroEnd"));%>">
+                            Nº Endereço: <input type="text" name="numeroEnd" value="<%=(request.getAttribute("numeroEnd"))%>">
                         </td>  
                     </tr>
                     <tr>

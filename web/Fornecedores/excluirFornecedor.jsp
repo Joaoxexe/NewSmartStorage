@@ -7,7 +7,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
                         <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -38,8 +37,7 @@
                         <th>ID</th>
                         <th>Nome do Fornecedor</th>
                         <th>Nome Fantasia</th>
-                        <th>Telefone</th>
-                        <th>CNPJ</th>
+                        <th>Telefone</th>     
                         <th>E-mail</th>              
                         <th>Código Endereço</th> 
                         <th>Nº Endereço</th>
@@ -48,50 +46,58 @@
             </table>
         </div>
         <div class="tbl-content">
-            <form action="../ServletExcluirFornecedor">
+            <form action="ServletExcluirFornecedor" method="post">
                 <table cellpadding="0" cellspacing="0" border="0">
                     <tr>
                         <td>
-                            ID do Fornecedor:<input type="text" name="id" value="<%out.print(request.getAttribute("id"));%>" readonly="true">
+                            ID do Fornecedor:<input type="text" name="id" value="<%=(request.getAttribute("id"))%>" readonly="true">
                         </td>
                         <td>
-                            Nome do Fornecedor:<input type="text" name="nome" value="<%out.print(request.getAttribute("nome"));%>" readonly="true">
+                            Nome do Fornecedor:<input type="text" name="nome" value="<%=(request.getAttribute("nome"))%>" readonly="true">
                         </td>
                         <td>
-                            Nome Fantasia:<input type="text" name="fantasia" value="<%out.print(request.getAttribute("fantasia"));%>" readonly="true">
+                            Nome Fantasia:<input type="text" name="fantasia" value="<%=(request.getAttribute("fantasia"))%>" readonly="true">
                         </td>
                         <td>
-                            Telefone:<input type="text" name="telefone" value="<%out.print(request.getAttribute("telefone"));%>" readonly="true">
-                        </td>
-                        <td>            
-                            CNPJ: <input type="text" name="cnpj" value="<%out.print(request.getAttribute("cnpj"));%>">
-                        </td>
+                            Telefone:<input type="text" name="telefone" value="<%=(request.getAttribute("telefone"))%>" readonly="true">
+                        </td>                       
                         <td>
-                            E-mail:<input type="text" name="email" value="<%out.print(request.getAttribute("email"));%>" readonly="true">
+                            E-mail:<input type="text" name="email" value="<%=(request.getAttribute("email"))%>" readonly="true">
                         </td> 
-                        <td>
+                        <td>                
                             Endereço:
-                            <select name="idEnd">
-                                <option selected="selected"><%out.print(request.getAttribute("idEnd"));%></option>
+                            <select name="cmbEndereco">
+                                <option selected="selected">Selecione</option>
                                 <%
                                     ServletSalvarFornecedor ssf = new ServletSalvarFornecedor();
                                     List<Enderecos> listaEnd = ssf.listarEnderecos();
 
-                                        for(Enderecos enderecos : listaEnd){                                                   
+                                    for(Enderecos enderecos : listaEnd){      
+                                           
+
                                 %>
-                                    <option value="<%out.print(request.getAttribute("idEnd"));%>">
-                                            <%out.print(enderecos.getTipoLogradouroEndereco() + " " +
-                                                        enderecos.getLogradouroEndereco() + ", " +
-                                                        enderecos.getBairroEndereco() + ", " +
-                                                        enderecos.getCidadeEndereco() + ", " +
-                                                        enderecos.getCepEndereco()); %>
+                                    <option selected="selected" value="<%=enderecos.getIdEndereco()%>">
+                                                            <%out.print(enderecos.getTipoLogradouroEndereco() + " " +
+                                                            enderecos.getLogradouroEndereco() + ", " +
+                                                            enderecos.getBairroEndereco() + ", " +
+                                                            enderecos.getCidadeEndereco() + ", " +
+                                                            enderecos.getCepEndereco()); %>
                                     </option>
+                                <%
                                     
-                                      <%}%>    
-                            </select>                    
+                                %>
+                                    <option value="<%=enderecos.getIdEndereco()%>">
+                                                    <%out.print(enderecos.getTipoLogradouroEndereco() + " " +
+                                                                enderecos.getLogradouroEndereco() + ", " +
+                                                                enderecos.getBairroEndereco() + ", " +
+                                                                 enderecos.getCidadeEndereco() + ", " +
+                                                                enderecos.getCepEndereco()); %>
+                                    </option>                  
+                                <%}%>    
+                            </select>      
                         </td>
                         <td>
-                            Nº Endereço <input type="text" name="numeroEnd" value="<%out.print(request.getAttribute("numeroEnd"));%>" readonly="true">
+                            Nº Endereço <input type="text" name="numeroEnd" value="<%=(request.getAttribute("numeroEnd"))%>" readonly="true">
                         </td>  
                     </tr>
                     <tr>

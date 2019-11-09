@@ -38,20 +38,21 @@ public class ServletExcluirFornecedor extends HttpServlet {
         
         Fornecedores f = new Fornecedores();
         DAOEnderecos de = new DAOEnderecos();
+        f.setIdFornecedor(Integer.parseInt(request.getParameter("id")));
         f.setNmFornecedor(request.getParameter("nome"));
         f.setNmFantasiaFornecedor(request.getParameter("fantasia"));
         f.setTelefoneFornecedor(request.getParameter("telefone"));
-        f.setCnpjFornecedor(request.getParameter("cnpj"));
+        f.setCnpjFornecedor(request.getParameter("CNPJ"));
         f.setEmailFornecedor(request.getParameter("email"));
-        f.setNumeroEnderecoFornecedor(Integer.parseInt(request.getParameter("numeroEnd")));
-        f.setFgAtivoFornecedore(Boolean.TRUE);
-        f.setIdEndereco(de.buscaIdEndereco(Integer.parseInt(request.getParameter("idEnd"))));       
+        f.setNumeroEnderecoFornecedor(Integer.parseInt(request.getParameter("numeroEnd")));     
+        f.setIdEndereco(de.buscaIdEndereco(Integer.parseInt(request.getParameter("cmbEndereco"))));       
         
         DAOFornecedores df = new DAOFornecedores();      
         df.remover(f);       
         
         response.sendRedirect("Fornecedores/listarFornecedores.jsp");
-    }
+        }
+    
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

@@ -48,7 +48,7 @@
             </table>
         </div>
         <div class="tbl-content">
-            <form action="../ServletSalvarFornecedor">
+            <form action="../ServletSalvarFornecedor" method="post">
                 <table cellpadding="0" cellspacing="0" border="0">
                     <tr>
                         <td>

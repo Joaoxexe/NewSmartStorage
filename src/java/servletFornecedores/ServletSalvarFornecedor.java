@@ -6,15 +6,12 @@
 package servletFornecedores;
 
 
-import dao.DAOCodigoBarras;
+
 import dao.DAOEnderecos;
 import dao.DAOFornecedores;
-import dao.DAOProdutos;
 import entidades.Enderecos;
 import entidades.Fornecedores;
-import entidades.Produtos;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

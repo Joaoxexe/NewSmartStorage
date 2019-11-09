@@ -9,7 +9,6 @@ import dao.DAOEnderecos;
 import dao.DAOFornecedores;
 import entidades.Fornecedores;
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -42,16 +41,17 @@ public class ServletAlterarFornecedor extends HttpServlet {
         f.setNmFornecedor(request.getParameter("nome"));
         f.setNmFantasiaFornecedor(request.getParameter("fantasia"));
         f.setTelefoneFornecedor(request.getParameter("telefone"));
-        f.setCnpjFornecedor(request.getParameter("cnpj"));
+        f.setCnpjFornecedor(request.getParameter("CNPJ"));
         f.setEmailFornecedor(request.getParameter("email"));
         f.setNumeroEnderecoFornecedor(Integer.parseInt(request.getParameter("numeroEnd")));
-        f.setFgAtivoFornecedore(Boolean.TRUE);
-        f.setIdEndereco(de.buscaIdEndereco(Integer.parseInt(request.getParameter("idEnd"))));       
+        f.setIdEndereco(de.buscaIdEndereco(Integer.parseInt(request.getParameter("cmbEndereco"))));
+     
         
         DAOFornecedores df = new DAOFornecedores();      
         df.alterar(f);       
         
         response.sendRedirect("Fornecedores/listarFornecedores.jsp");
+    
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

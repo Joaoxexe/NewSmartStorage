@@ -46,7 +46,7 @@
             </table>
         </div>
         <div class="tbl-content">
-            <form action="../ServletSalvarProduto">
+            <form action="../ServletSalvarProduto" method="post">
                 <table cellpadding="0" cellspacing="0" border="0">
                     <tr>
                         <td>
@@ -62,9 +62,14 @@
 
                                         for(CodigoDeBarras codiboBarras : listaBarras){                                                   
                                 %>
+                                
+                                
                                     <option value="<%=codiboBarras.getIdBarras()%>">
                                         <%out.print(codiboBarras.getCodigo()); %>
                                     </option>
+                                    
+                                    
+                                    
                                       <%}%>
                             </select>
                         </td>
