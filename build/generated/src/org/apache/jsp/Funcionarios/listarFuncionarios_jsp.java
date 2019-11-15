@@ -318,7 +318,7 @@ out.print(enderecos.getTipoLogradouroEndereco() + " " +
       out.write("                </div>\n");
       out.write("            </div>\n");
       out.write("        </div>\n");
-      out.write("    </div>\n");
+      out.write("    \n");
       out.write("\n");
       out.write("    <!-- Editar -->\n");
       out.write("    <div class=\"modal fade\" id=\"EditarModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"EditarModalTitle\" aria-hidden=\"true\">\n");
@@ -445,7 +445,6 @@ out.print(enderecos.getTipoLogradouroEndereco() + " " +
       out.write("            </div> \n");
       out.write("        </div>\n");
       out.write("    </div>\n");
-      out.write("    </div>\n");
       out.write("\n");
       out.write("    <!-- Excluir -->\n");
       out.write("    <div class=\"modal fade\" id=\"ExcluirModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"ExcluirModalTitle\" aria-hidden=\"true\">\n");
@@ -477,6 +476,7 @@ out.print(enderecos.getTipoLogradouroEndereco() + " " +
       out.write("            </div>\n");
       out.write("        </div>\n");
       out.write("    </div>\n");
+      out.write("</div>\n");
       out.write("</body>\n");
       out.write("<script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\" integrity=\"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo\" crossorigin=\"anonymous\">\n");
       out.write("</script>\n");
@@ -514,7 +514,8 @@ out.print(enderecos.getTipoLogradouroEndereco() + " " +
       out.write("            $('#AdicionarModal').modal('show');\n");
       out.write("        });\n");
       out.write("    });\n");
-      out.write("</script>");
+      out.write("</script>\n");
+      out.write("</html>");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;
