@@ -18,7 +18,6 @@
     <link rel="stylesheet" href="../css/font-awesome-all.min.css">
     <link rel="stylesheet" href="../css/loading.css">
     <link rel="stylesheet" href="../css/table.css">
-    <link href="https://fonts.googleapis.com/css?family=Teko|Orbitron|Turret+Road&display=swap" rel="stylesheet">   
 </head>
 <body>
     <div id="loading" class="background-loader">

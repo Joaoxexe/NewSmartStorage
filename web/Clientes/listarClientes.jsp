@@ -189,10 +189,11 @@
                                             <%}%>
                                     </select>
                                 </div>
-                                <div class="modal-footer">
-                                    <input type="submit" class="btn btn-primary" value="Salvar Cliente">
-                                    <a href="../Enderecos/salvarEndereco.jsp" class="btn btn-primary">Novo Endereço</a>
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                <div class="text-right"
+                                    <div class="modal-footer">
+                                        <input type="submit" class="btn btn-primary" value="Salvar Cliente">
+                                        <a href="../Enderecos/salvarEndereco.jsp" class="btn btn-primary">Novo Endereço</a>
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                                 </div>
                             </div>
                         </form>
@@ -219,7 +220,7 @@
                                 <label for="nome mr-2">ID</label>
                             </div>
                             <div class="col-md-8 text-center">
-                                <input type="text" name="id" value="Insira um id Existente">
+                                <input type="text" name="id" placeholder="Entre com um ID Existente">
                             </div>
 
                             <div class="col-md-4 text-center">
@@ -283,15 +284,16 @@
                                                         enderecos.getCidadeEndereco() + ", " +
                                                         enderecos.getCepEndereco()); %>
                                         </option>
-
                                         <%}%>
                                 </select>
                             </div>
-                        </div>
-                        <div class="modal-footer">
-                            <input type="submit" class="btn btn-primary" value="Alterar Cliente">
-                            <a href="../Enderecos/salvarEndereco.jsp" class="btn btn-primary">Novo Endereço</a>
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                        </div>     
+                        <div class="text-right"
+                            <div class="modal-footer">
+                                <input type="submit" class="btn btn-primary" value="Alterar Cliente">
+                                <a href="../Enderecos/salvarEndereco.jsp" class="btn btn-primary">Novo Endereço</a>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                            </div>
                         </div>
                     </form>
                 </div>
@@ -317,10 +319,10 @@
                                 <label for="nome mr-2">ID</label>
                             </div>
                             <div class="col-md-8 text-center">
-                                <input type="text" name="id" value="Insira um id existente">
+                                <input type="text" name="id" placeholder="Entre com um ID Existente">
                             </div>
                         </div>
-                        <div class="modal-footer">
+                        <div class="modal-footer" class="text-right">
                             <input type="submit" class="btn btn-primary" value="Excluir Cliente">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                         </div>

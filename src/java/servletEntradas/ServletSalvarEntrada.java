@@ -5,8 +5,17 @@
  */
 package servletEntradas;
 
+import dao.DAOEntradas;
+import dao.DAOFornecedores;
+import dao.DAOMovimentacoes;
+import dao.DAOProdutos;
+import entidades.Entradas;
+import entidades.Movimentacoes;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.math.BigDecimal;
+import java.math.BigInteger;
+import java.util.Date;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -32,18 +41,37 @@ public class ServletSalvarEntrada extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet ServletSalvarEntrada</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet ServletSalvarEntrada at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        }
+        Entradas e = new Entradas();
+        
+        String data_nasc;
+        data_nasc = (request.getParameter("data"));
+        Date data = new Date(data_nasc);
+        e.setDtEntrada(data);
+        
+        DAOFornecedores df = new DAOFornecedores();
+        e.setIdFornecedor(df.buscaIdFornecedor(Integer.parseInt(request.getParameter("idFornecedor"))));
+        
+        e.setQtdEntrada(Integer.parseInt(request.getParameter("qtde")));
+        
+        String big;
+        big = (request.getParameter("valor")); 
+        BigInteger bigInteger = new BigInteger(big);  
+        e.setValorUnitario(bigInteger);
+        
+        DAOEntradas de = new DAOEntradas();
+        de.salvar(e);
+        
+        DAOProdutos dp = new DAOProdutos();
+        
+        Movimentacoes movi = new Movimentacoes();
+        movi.setIdEntrada(de.buscaIdEntrada(e.getIdEntrada()));
+        movi.setIdProduto(dp.buscaId(Integer.parseInt(request.getParameter("idProduto"))));
+        DAOMovimentacoes dm = new DAOMovimentacoes();
+        
+        dm.salvar(movi);
+        
+        
+        response.sendRedirect("Movimentacoes/listarMovimentacoes.jsp");     
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

@@ -260,7 +260,7 @@
                                 <label for="nome mr-2">ID</label>
                             </div>
                             <div class="col-md-8 text-center">
-                                <input type="text" name="id">
+                                <input type="text" name="id" placeholder="Entre com um ID Existente">
                             </div>
 
                             <div class="col-md-4 text-center">
@@ -378,15 +378,15 @@
                                 <label for="nome mr-2">ID</label>
                             </div>
                             <div class="col-md-8 text-center">
-                                <input type="text" name="id" value="Insira um id existente">
+                                <input type="text" name="id" placeholder="Entre com um ID Existente">
                             </div>
 
-                            <input type="submit" class="btn btn-primary" value="Remover">
+                            <div class="modal-footer" class="text-right">
+                                <input type="submit" class="btn btn-primary" value="Remover">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                            </div>
                         </div>
                     </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                 </div>
             </div>
         </div>

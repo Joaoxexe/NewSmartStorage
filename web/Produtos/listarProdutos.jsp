@@ -142,15 +142,13 @@
 
                                         <br>
                                     </div>
-
-                                    <input type="submit" class="btn btn-primary" value="Salvar">
-                                    <br>
-                                    <a href="../CodigoBarras/salvarCodigoB.jsp" class="btn btn-primary">Novo Código de Barras</a>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                        <input type="submit" class="btn btn-primary" value="Salvar Produto">
+                                        <a href="../CodigoBarras/salvarCodigoB.jsp" class="btn btn-primary">Novo Código de Barras</a>
+                                    </div>
                                 </div>
                             </form>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                         </div>
                     </div>
                 </div>
@@ -176,7 +174,7 @@
                                         <label for="nome mr-2">ID</label>
                                     </div>
                                     <div class="col-md-8 text-center">
-                                        <input type="text" name="id" value="Insira um id existente">
+                                        <input type="text" name="id" placeholder="Entre com um ID Existente">
                                     </div>
 
                                     <div class="col-md-4 text-center">
@@ -208,12 +206,13 @@
                                                 <%}%>
                                         </select>
                                     </div>
-                                    <input type="submit" class="btn btn-primary" value="Atualizar">                                
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                        <input type="submit" class="btn btn-primary" value="Alterar Produto">
+                                        <a href="../CodigoBarras/salvarCodigoB.jsp" class="btn btn-primary">Novo Código de Barras</a>
+                                    </div>                             
                                 </div>
                             </form>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                         </div>
                     </div>
                 </div>
@@ -239,15 +238,16 @@
                                         <label for="nome mr-2">ID</label>
                                     </div>
                                     <div class="col-md-8 text-center">
-                                        <input type="text" name="id" value="Insira um id existente">
+                                        <input type="text" name="id" placeholder="Entre com um ID Existente">
                                     </div>
  
-                                    <input type="submit" class="btn btn-primary" value="Remover">                                
+                                    <div class="modal-footer">
+                                        <input type="submit" class="btn btn-primary" value="Excluir Produto">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                    </div>
+                                                                    
                                 </div>
                             </form>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                         </div>
                     </div>
                 </div>

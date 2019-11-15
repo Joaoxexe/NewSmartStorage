@@ -232,6 +232,13 @@
                         <div class="modal-body row">
 
                             <div class="col-md-4 text-center">
+                                <label for="nome mr-2">ID</label>
+                            </div>
+                            <div class="col-md-8 text-center">
+                                <input type="text" name="id" placeholder="Entre com um ID Existente">
+                            </div>
+                            
+                            <div class="col-md-4 text-center">
                                 <label for="nome mr-2">Nome Fornecedor</label>
                             </div>
                             <div class="col-md-8 text-center">
@@ -325,7 +332,7 @@
                                 <label for="nome mr-2">ID</label>
                             </div>
                             <div class="col-md-8 text-center">
-                                <input type="text" name="id" value="Insira um id existente">
+                                <input type="text" name="id" placeholder="Entre com um ID Existente">
                             </div>
 
                             <input type="submit" class="btn btn-primary" value="Remover">

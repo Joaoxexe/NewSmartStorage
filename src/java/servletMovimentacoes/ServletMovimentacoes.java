@@ -5,8 +5,24 @@
  */
 package servletMovimentacoes;
 
+import dao.DAOClientes;
+import dao.DAOEnderecos;
+import dao.DAOEntradas;
+import dao.DAOFornecedores;
+import dao.DAOFuncionario;
+import dao.DAOMovimentacoes;
+import dao.DAOProdutos;
+import dao.DAOSaidas;
+import entidades.Clientes;
+import entidades.Entradas;
+import entidades.Fornecedores;
+import entidades.Funcionarios;
+import entidades.Movimentacoes;
+import entidades.Produtos;
+import entidades.Saidas;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -32,19 +48,44 @@ public class ServletMovimentacoes extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet ServletMovimentacoes</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet ServletMovimentacoes at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        }
+       
+        
     }
+    public List<Movimentacoes> listarMovimentacoes(){
+        DAOMovimentacoes dm = new DAOMovimentacoes();
+        return dm.listarMovi();
+    }
+    
+    public List <Entradas> listarEntradas(){
+        DAOEntradas de = new DAOEntradas();
+        return de.listarEntradas();
+    }
+    
+    public List <Saidas> listarSadias(){
+        DAOSaidas ds = new DAOSaidas();
+        return ds.listarSaidas();
+    }
+    
+    public List<Produtos> listarProdutos(){
+        DAOProdutos dp = new DAOProdutos();
+        return dp.listar(); // está na DAOcodbarras    
+    }
+    
+    public List<Funcionarios> listarFuncionarios(){
+        DAOFuncionario dfun = new DAOFuncionario();
+        return dfun.listarFuncionarios(); // está na DAOcodbarras    
+    }
+    
+    public List<Clientes> listarClientes(){
+        DAOClientes dc = new DAOClientes();
+        return dc.listarClientes(); // está na DAOcodbarras    
+    }
+    public List<Fornecedores> listarFornecedores(){
+        DAOFornecedores dfor = new DAOFornecedores();
+        return dfor.listarForenecedores(); // está na DAOcodbarras    
+    }
+    
+    
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
