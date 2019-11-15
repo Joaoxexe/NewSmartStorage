@@ -9,6 +9,7 @@ import dao.DAOEnderecos;
 import entidades.Enderecos;
 import java.io.IOException;
 import java.util.List;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -48,6 +49,13 @@ public class ServletSalvarEndereco extends HttpServlet {
         
         DAOEnderecos de = new DAOEnderecos();
         de.salvar(endereco);
+        
+        request.setAttribute("mensagem", "Endereço cadastrado com sucesso!");
+        RequestDispatcher rd;
+        rd = request.getRequestDispatcher("Enderecos/salvarEndereco.jsp");
+        rd.forward(request, response);
+        
+        response.sendRedirect("Enderecos/salvarEndereco.jsp");
     }
     
     public List<Enderecos> listarEnderecos(){

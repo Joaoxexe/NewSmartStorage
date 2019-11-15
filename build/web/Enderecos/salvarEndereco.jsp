@@ -19,7 +19,8 @@
     <link rel="stylesheet" href="css/font-awesome-all.min.css">
     <link rel="stylesheet" href="css/loading.css">
     <link rel="stylesheet" href="css/table.css">
-    <link href="https://fonts.googleapis.com/css?family=Teko|Orbitron|Turret+Road&display=swap" rel="stylesheet">   
+    <script src="../js/font-awesome-min.js"></script>
+   
 </head>
 <body>
     <div id="loading" class="background-loader">
@@ -29,9 +30,15 @@
             <div class="inner three"></div>
         </div>
     </div>
+    
+    <div class="text-left">
+        <a role="button" href="../index.html" class="btn btn-info">
+            <i class="fas fa-chevron-left"></i> Pagina Inicial
+        </a>
+    </div>
+    
     <div defer class="container pt-5 pb-2">
         <h1 class="pb-3">Cadastro de Endereço</h1>
-        <td><a href="../index.html">Pagina Inicial</a></td>   
         <div class="tbl-header">
             <table cellpadding="0" cellspacing="0" border="0">
                 <thead>
@@ -69,8 +76,12 @@
                     </tr>
                     <tr>
                         <td>
-                            <input type="submit" value="Salvar Endereço">
+                            <input type="submit"  class="btn btn-primary" value="Salvar Endereço" >
                         </td>
+                        
+                        <div class="alert alert-success">
+                            <h3>${mensagem}</h3>
+                        </div>
                     </tr>                                
                 </table>
             </form>
@@ -80,7 +91,7 @@
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<script src="./js/font-awesome-min.js"></script>
+<script src="css/font-awesome-min.js"></script>
     <script>
         $(document).ready(function() {
             setTimeout(() => {

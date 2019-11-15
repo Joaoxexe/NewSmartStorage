@@ -42,9 +42,7 @@ public class ServletExcluirProduto extends HttpServlet {
         DAOProdutos dp = new DAOProdutos();
        
         
-        p.setIdProduto(Integer.parseInt(request.getParameter("id")));
-        p.setNmProduto(request.getParameter("nome"));
-        p.setIdBarras(dc.buscaId(Integer.parseInt(request.getParameter("codigo"))));   
+        p.setIdProduto(Integer.parseInt(request.getParameter("id")));       
         dp.remover(p);
         
         response.sendRedirect("Produtos/listarProdutos.jsp");

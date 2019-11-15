@@ -86,19 +86,23 @@ body {
     color: #b14a66;
 }
 
-    a:hover{	
-	font-family: 'Teko';
-	
-	color: white;
-        text-shadow: -1px 0 #fff, 0 1px white;
-        animation: blinker 0.5s infinite;
-        text-decoration: none;
-    }
-		
-    a{	
-	font-family: 'Teko';
-	text-shadow: -3px 0 #000, 0 3px #000;
-	font-size: 22px;
-	text-decoration: none;
-	color: #999;		
-    }
+.btn-info {
+    background-color: #736dbd;
+    border-color: transparent;
+}
+.btn-info:hover {
+    background-color: #736dbd;
+    border-color: white;
+}
+.btn-info:active {
+    background-color: white;
+    border-color: #736dbd;
+}
+.btn-info:active {
+    color: darkblue !important;
+    background-color: white !important;
+    border-color: #736dbd;
+}
+.btn-info:focus {
+    box-shadow: 0 0 0 .2rem white;
+}

@@ -10,8 +10,6 @@ import dao.DAOEnderecos;
 import entidades.Clientes;
 import entidades.Enderecos;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import javax.servlet.ServletException;
@@ -48,16 +46,21 @@ public class ServletSalvarCliente extends HttpServlet {
         data_nasc = (request.getParameter("data"));
         Date data = new Date(data_nasc);
         c.setDtNascimentoCliente(data);
-    
-        if(request.getParameter("sexo") == "Masculino"){
+        
+        Clientes c1 = new Clientes();  
+        String sexo = request.getParameter("sexo");
+        
+        
+        if(sexo == "Masculino"){
             c.setSexoCliente('M');
         }
-        else if (request.getParameter("sexo") == "Feminino"){
+        else if (sexo == "Feminino"){
             c.setSexoCliente('F');
         } 
         else{
             c.setSexoCliente('O');
         }
+        
         c.setCpfCliente(request.getParameter("cpf"));
         
         c.setNumeroEnderecoCliente(Integer.parseInt(request.getParameter("numeroEnd")));
@@ -65,9 +68,9 @@ public class ServletSalvarCliente extends HttpServlet {
         
         DAOEnderecos de = new DAOEnderecos();
         c.setIdEndereco(de.buscaIdEndereco(Integer.parseInt(request.getParameter("idEnd"))));       
-        
+        dc.salvar(c);  
         response.sendRedirect("Clientes/listarClientes.jsp");
-        dc.salvar(c);       
+             
     }
     
     public List<Enderecos> listarEnderecos(){

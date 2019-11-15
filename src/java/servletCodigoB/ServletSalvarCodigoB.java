@@ -42,7 +42,7 @@ public class ServletSalvarCodigoB extends HttpServlet {
         DAOCodigoBarras dcb = new DAOCodigoBarras();
         
         dcb.salvar(cb);
-        response.sendRedirect("Produtos/salvarProduto.jsp");      
+        response.sendRedirect("Produtos/listarProdutos.jsp");      
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

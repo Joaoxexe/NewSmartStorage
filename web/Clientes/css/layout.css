@@ -30,13 +30,14 @@ body {
 }
 
 .item-menu {
+    padding: 25px 0px;
     top: 50px; 
     max-width: 300px;
     height: 300px;
     margin: 40px 40px;
     border-radius: 25%;
     text-align: center;
-    background-image: radial-gradient(white, #7bcfde);
+    background-color: rgb(75, 242, 226);
 }
 
 .item-menu a {
@@ -44,9 +45,9 @@ body {
 }
 
 .icon {
-    color: #463e3e;
+    color: rgb(68, 65, 166);
     font-size: 150px;
-    margin: 0;
+    margin: 25px 0;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -56,12 +57,11 @@ body {
 
 .icon:hover {
     font-size: 170px;
-    color: black;
     transition: all 0.3s linear;
 }
 
 .item-name {
-    color: #463e3e;
+    color: rgb(68, 65, 166);
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
     font-size: 30px;
@@ -136,7 +136,4 @@ body {
     .container h1{
         margin-top: 170px;
     }
-    
-    
-    
 }

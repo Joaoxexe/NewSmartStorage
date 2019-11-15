@@ -5,11 +5,10 @@
  */
 package servletFornecedores;
 
-import dao.DAOEnderecos;
+
 import dao.DAOFornecedores;
 import entidades.Fornecedores;
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -36,17 +35,9 @@ public class ServletExcluirFornecedor extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         
-        Fornecedores f = new Fornecedores();
-        DAOEnderecos de = new DAOEnderecos();
+        Fornecedores f = new Fornecedores();     
         f.setIdFornecedor(Integer.parseInt(request.getParameter("id")));
-        f.setNmFornecedor(request.getParameter("nome"));
-        f.setNmFantasiaFornecedor(request.getParameter("fantasia"));
-        f.setTelefoneFornecedor(request.getParameter("telefone"));
-        f.setCnpjFornecedor(request.getParameter("CNPJ"));
-        f.setEmailFornecedor(request.getParameter("email"));
-        f.setNumeroEnderecoFornecedor(Integer.parseInt(request.getParameter("numeroEnd")));     
-        f.setIdEndereco(de.buscaIdEndereco(Integer.parseInt(request.getParameter("cmbEndereco"))));       
-        
+     
         DAOFornecedores df = new DAOFornecedores();      
         df.remover(f);       
         
