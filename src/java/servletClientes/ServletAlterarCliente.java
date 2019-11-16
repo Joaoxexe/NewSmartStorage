@@ -47,18 +47,20 @@ public class ServletAlterarCliente extends HttpServlet {
         Date data = new Date(data_nasc);
         c.setDtNascimentoCliente(data);
         
-        Clientes c1 = new Clientes();  
-        String sexo = request.getParameter("sexo");
+        Clientes c1 = new Clientes(); 
         
-        
-        if(sexo == "Masculino"){
+        int sexo = Integer.parseInt(request.getParameter("sexo"));
+        if(sexo == 2){
             c.setSexoCliente('M');
         }
-        else if (sexo == "Feminino"){
-            c.setSexoCliente('F');
+        else if (sexo == 1){
+             c.setSexoCliente('F');
+        } 
+        else if (sexo == 3){
+             c.setSexoCliente('O');
         } 
         else{
-            c.setSexoCliente('O');
+             c.setSexoCliente('E');
         }
         
         c.setCpfCliente(request.getParameter("cpf"));

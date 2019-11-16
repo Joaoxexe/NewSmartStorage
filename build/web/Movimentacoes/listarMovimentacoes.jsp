@@ -4,6 +4,8 @@
     Author     : João Victor
 --%>
 
+<%@page import="servletSaidas.ServletSalvarSaida"%>
+<%@page import="servletEntradas.ServletSalvarEntrada"%>
 <%@page import="java.util.List"%>
 <%@page import="entidades.Funcionarios"%>
 <%@page import="entidades.Entradas"%>
@@ -11,7 +13,6 @@
 <%@page import="entidades.Fornecedores"%>
 <%@page import="entidades.Clientes"%>
 <%@page import="entidades.Movimentacoes"%>
-<%@page import="servletMovimentacoes.ServletMovimentacoes"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -28,6 +29,7 @@
     <link rel="stylesheet" href="../css/loading.css">
     <link rel="stylesheet" href="../css/table.css">
 </head>
+
 <body>
     <div id="loading" class="background-loader">
         <div class="loader">
@@ -36,7 +38,7 @@
             <div class="inner three"></div>
         </div>
     </div>
-    
+
     <div class="text-left">
         <a role="button" href="../index.html" class="btn btn-info">
             <i class="fas fa-chevron-left"></i> Pagina Inicial
@@ -44,7 +46,7 @@
     </div>
     <div defer class="container pt-5 pb-2">
         <h1 class="pb-3">Movimentações De Produtos</h1>
-        
+
         <div class="text-center">
             <a href="../Entradas/salvarEntrada.jsp" class="btn btn-primary">Computar uma nova Entrada</a>
             <a href="../Saidas/salvarSaida.jsp" class="btn btn-primary">Computar uma nova Saída</a>
@@ -52,49 +54,106 @@
         <br>
         <div class="tbl-header">
             <table cellpadding="0" cellspacing="0" border="0">
-                <thead>                   
+                <thead>
                     <tr>
+                        <br>
+                        <th>
+                            <tr>
+                                <h1 class="pb-3">Entrada De Produtos</h1></tr>
+                        </th>
                         <th>ID da Entrada</th>
                         <th>Data da Entrada</th>
                         <th>Quantidade que Entrou</th>
-                        <th>Valor</th>    
-                        <th>Fornecedor</th>     
+                        <th>Valor Unitario</th>
+                        <th>Fornecedor</th>
                     </tr>
                 </thead>
             </table>
         </div>
         <div class="tbl-content">
-            <form action="../ServletMovimentacoes" method="post">
                 <%
-                    ServletMovimentacoes ssm = new ServletMovimentacoes();
-                    List<Entradas> getList = ssm.listarEntradas();
+                    ServletSalvarEntrada sse = new ServletSalvarEntrada();
+                    List<Entradas> getEntradas = sse.listarEntradas();
                 %>
-                    <table cellpadding="0" cellspacing="0" border="0">
-                        <tbody>
-                            <%                 
-                                for(Entradas entradas : getList ){
+                <table cellpadding="0" cellspacing="0" border="0">
+                    <tbody>
+                        <%                 
+                                for(Entradas entradas : getEntradas ){
                             %>
-                                <tr>
-                                    <td>
-                                        <%entradas.getIdEntrada(); %>
-                                    </td>
-                                    <td>
-                                        <%entradas.getDtEntrada(); %>
-                                    </td>
-                                    <td>
-                                        <%entradas.getQtdEntrada(); %>
-                                    </td>
-                                    <td>
-                                        <%entradas.getValorUnitario(); %>
-                                    </td>
-                                    <td>
-                                        <%entradas.getIdFornecedor().getNmFornecedor(); %>
-                                    </td>
-                                </tr>
-                                <%}%>
-                        </tbody>
-                    </table>
-            </form>
+                            <tr>
+                                <td>
+                                    <%=entradas.getIdEntrada() %>
+                                </td>
+                                <td>
+                                    <%=entradas.getDtEntrada() %>
+                                </td>
+                                <td>
+                                    <%=entradas.getQtdEntrada() %>
+                                </td>
+                                <td>
+                                    <%=entradas.getValorUnitario() %>
+                                </td>
+                                <td>
+                                    <%=entradas.getIdFornecedor().getNmFornecedor() %>
+                                </td>
+                            </tr>
+                            <%}%>
+                    </tbody>
+                </table>
+        </div>
+        <br>
+        <div class="tbl-header">
+            <table cellpadding="0" cellspacing="0" border="0">
+                <thead>
+                    <tr>
+                        <br>
+                        <th>
+                            <tr>
+                                <h1 class="pb-3">Saída De Produtos</h1></tr>
+                        </th>
+                        <th>ID da Saída</th>
+                        <th>Data da Saída</th>
+                        <th>Quantidade que Saiu</th>
+                        <th>Valor Unitario</th>
+                        <th>Vendedor</th>
+                        <th>Cliente</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        <div class="tbl-content">
+                <%
+                    ServletSalvarSaida sss = new ServletSalvarSaida();
+                    List<Saidas> getSaidas = sss.listarSadias();
+                %>
+                <table cellpadding="0" cellspacing="0" border="0">
+                    <tbody>
+                        <%                 
+                                for(Saidas saidas : getSaidas ){
+                            %>
+                            <tr>
+                                <td>
+                                    <%=saidas.getIdSaida() %>
+                                </td>
+                                <td>
+                                    <%=saidas.getDtSaida() %>
+                                </td>
+                                <td>
+                                    <%=saidas.getQtdSaida() %>
+                                </td>
+                                <td>
+                                    <%=saidas.getValorUnitario() %>
+                                </td>
+                                <td>
+                                    <%=saidas.getIdFuncionario().getNmFuncionario() %>
+                                </td>
+                                <td>
+                                    <%=saidas.getIdCliente().getNmCliente() %>
+                                </td>
+                            </tr>
+                            <%}%>
+                    </tbody>
+                </table>
         </div>
     </div>
 </body>
@@ -102,18 +161,19 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script src="../js/font-awesome-min.js"></script>
-    <script>
-        $(document).ready(function() {
-            setTimeout(() => {
-                $('#loading').remove();
-            }, 1000);
+<script>
+    $(document).ready(function() {
+        setTimeout(() => {
+            $('#loading').remove();
+        }, 1000);
 
-            $(window).on("load resize", function() {
-                var scrollWidth = $('.tbl-content').width() - $('.tbl-content table').width();
-                $('.tbl-header').css({
-                    'padding-right': scrollWidth
-                });
-            }).resize();
-        });
-    </script>
+        $(window).on("load resize", function() {
+            var scrollWidth = $('.tbl-content').width() - $('.tbl-content table').width();
+            $('.tbl-header').css({
+                'padding-right': scrollWidth
+            });
+        }).resize();
+    });
+</script>
+
 </html>

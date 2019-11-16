@@ -157,7 +157,13 @@
                                     <label for="nome mr-2">Sexo</label>
                                 </div>
                                 <div class="col-md-8 text-center">
-                                    <input type="text" name="sexo">
+                                    <form>
+                                        <INPUT TYPE="RADIO" NAME="sexo" VALUE="1"> Feminino
+                                        <INPUT TYPE="RADIO" NAME="sexo" VALUE="2"> Masculino
+                                        <br>
+                                        <INPUT TYPE="RADIO" NAME="sexo" VALUE="3"> Outros
+                                        <br>
+                                    </form>
                                 </div>
 
                                 <div class="col-md-4 text-center">
@@ -189,11 +195,10 @@
                                             <%}%>
                                     </select>
                                 </div>
-                                <div class="text-right"
-                                    <div class="modal-footer">
-                                        <input type="submit" class="btn btn-primary" value="Salvar Cliente">
-                                        <a href="../Enderecos/salvarEndereco.jsp" class="btn btn-primary">Novo Endereço</a>
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                <div class="modal-footer text-right">
+                                    <input type="submit" class="btn btn-primary" value="Salvar Cliente">
+                                    <a href="../Enderecos/salvarEndereco.jsp" class="btn btn-primary">Novo Endereço</a>
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                                 </div>
                             </div>
                         </form>
@@ -227,7 +232,7 @@
                                 <label for="nome mr-2">Nome</label>
                             </div>
                             <div class="col-md-8 text-center">
-                                <input type="text" name="nome" >
+                                <input type="text" name="nome">
                             </div>
 
                             <div class="col-md-4 text-center">
@@ -255,7 +260,13 @@
                                 <label for="nome mr-2">Sexo</label>
                             </div>
                             <div class="col-md-8 text-center">
-                                <input type="text" name="sexo">
+                                <form>
+                                    <INPUT TYPE="RADIO" NAME="sexo" VALUE="1"> Feminino
+                                    <INPUT TYPE="RADIO" NAME="sexo" VALUE="2"> Masculino
+                                    <br>
+                                    <INPUT TYPE="RADIO" NAME="sexo" VALUE="3"> Outros
+                                    <br>
+                                </form>
                             </div>
 
                             <div class="col-md-4 text-center">
@@ -287,13 +298,11 @@
                                         <%}%>
                                 </select>
                             </div>
-                        </div>     
-                        <div class="text-right"
-                            <div class="modal-footer">
-                                <input type="submit" class="btn btn-primary" value="Alterar Cliente">
-                                <a href="../Enderecos/salvarEndereco.jsp" class="btn btn-primary">Novo Endereço</a>
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                            </div>
+                        </div>
+                        <div class="modal-footer" align="right">
+                            <input type="submit" class="btn btn-primary" value="Alterar Cliente">
+                            <a href="../Enderecos/salvarEndereco.jsp" class="btn btn-primary">Novo Endereço</a>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                         </div>
                     </form>
                 </div>
@@ -322,9 +331,11 @@
                                 <input type="text" name="id" placeholder="Entre com um ID Existente">
                             </div>
                         </div>
-                        <div class="modal-footer" class="text-right">
-                            <input type="submit" class="btn btn-primary" value="Excluir Cliente">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                        <div class="text-right">
+                            <div class="modal-footer">
+                                <input type="submit" class="btn btn-primary" value="Excluir Cliente">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                            </div>
                         </div>
                     </form>
                 </div>

@@ -188,7 +188,7 @@
                             <div class="col-md-8 text-center">
                                 <select name="idEnd">
                                     <option selected="selected">Selecione</option>
-                                    <%
+                                            <%
                                                 ServletSalvarFornecedor ssf1 = new ServletSalvarFornecedor();
                                                 List<Enderecos> listaEnd1 = ssf1.listarEnderecos();
 
@@ -205,11 +205,11 @@
                                         <%}%>
                                 </select>
                             </div>
-
-                            <input type="submit" class="btn btn-primary" value="Salvar Fornecedor">
-                            <br>
-                            <a href="../Enderecos/salvarEndereco.jsp" class="btn btn-primary">Novo Endereço</a>
-
+                            <div class="modal-footer">
+                                <input type="submit" class="btn btn-primary" value="Salvar Fornecedor">
+                                <a href="../Enderecos/salvarEndereco.jsp" class="btn btn-primary">Novo Endereço</a>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                            </div>
                         </div>
                     </form>
                 </div>
@@ -237,7 +237,7 @@
                             <div class="col-md-8 text-center">
                                 <input type="text" name="id" placeholder="Entre com um ID Existente">
                             </div>
-                            
+
                             <div class="col-md-4 text-center">
                                 <label for="nome mr-2">Nome Fornecedor</label>
                             </div>
@@ -303,13 +303,14 @@
                                         <%}%>
                                 </select>
                             </div>
-                            <input type="submit" class="btn btn-primary" value="Salvar Fornecedor">
+                            <div class="modal-footer">
+                                <input type="submit" class="btn btn-primary" value="Alterar Fornecedor">
+                                <a href="../Enderecos/salvarEndereco.jsp" class="btn btn-primary">Novo Endereço</a>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                            </div>
                         </div>
                     </form>
                 </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
             </div>
         </div>
     </div>
@@ -334,13 +335,13 @@
                             <div class="col-md-8 text-center">
                                 <input type="text" name="id" placeholder="Entre com um ID Existente">
                             </div>
-
-                            <input type="submit" class="btn btn-primary" value="Remover">
+                            
+                            <div class="modal-footer">
+                                <input type="submit" class="btn btn-primary" value="Excluir Fornecedor">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                            </div>
                         </div>
                     </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                 </div>
             </div>
         </div>

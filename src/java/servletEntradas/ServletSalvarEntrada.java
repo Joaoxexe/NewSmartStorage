@@ -12,10 +12,9 @@ import dao.DAOProdutos;
 import entidades.Entradas;
 import entidades.Movimentacoes;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.Date;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -72,6 +71,11 @@ public class ServletSalvarEntrada extends HttpServlet {
         
         
         response.sendRedirect("Movimentacoes/listarMovimentacoes.jsp");     
+    }
+    
+     public List<Entradas> listarEntradas(){
+        DAOEntradas de = new DAOEntradas();
+        return de.listarEntradas();
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

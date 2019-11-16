@@ -49,15 +49,18 @@ public class ServletSalvarFuncionario extends HttpServlet {
         f.setNumeroEnderecoFuncionario(Integer.parseInt(request.getParameter("numeroEnd")));
         f.setFgAtivoFuncionario(Boolean.TRUE);
         
-        String sexo = request.getParameter("sexo");
-        if(sexo == "Masculino"){
+        int sexo = Integer.parseInt(request.getParameter("sexo"));
+        if(sexo == 2){
             f.setSexoFuncionario('M');
         }
-        else if (sexo == "Feminino"){
+        else if (sexo == 1){
              f.setSexoFuncionario('F');
         } 
-        else{
+        else if (sexo == 3){
              f.setSexoFuncionario('O');
+        } 
+        else{
+             f.setSexoFuncionario('E');
         }
         
         DAOEnderecos de = new DAOEnderecos();

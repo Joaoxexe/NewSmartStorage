@@ -96,9 +96,6 @@
                     </table>
             </form>
 
-                        
-                        
-                        
             <!-- Adicionar -->
             <div class="modal fade" id="AdicionarModal" tabindex="-1" role="dialog" aria-labelledby="AdicionarModalTitle" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
@@ -154,9 +151,6 @@
                 </div>
             </div>
 
-                                        
-                                        
-                                        
             <!-- Editar -->
             <div class="modal fade" id="EditarModal" tabindex="-1" role="dialog" aria-labelledby="EditarModalTitle" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
@@ -210,18 +204,15 @@
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                                         <input type="submit" class="btn btn-primary" value="Alterar Produto">
                                         <a href="../CodigoBarras/salvarCodigoB.jsp" class="btn btn-primary">Novo Código de Barras</a>
-                                    </div>                             
+                                    </div>
                                 </div>
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
-                                        
-                                        
-                                        
-                                        
-           <!-- Excluir -->
+
+            <!-- Excluir -->
             <div class="modal fade" id="ExcluirModal" tabindex="-1" role="dialog" aria-labelledby="ExcluirModalTitle" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
@@ -240,18 +231,18 @@
                                     <div class="col-md-8 text-center">
                                         <input type="text" name="id" placeholder="Entre com um ID Existente">
                                     </div>
- 
+
                                     <div class="modal-footer">
                                         <input type="submit" class="btn btn-primary" value="Excluir Produto">
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                                     </div>
-                                                                    
+
                                 </div>
                             </form>
                         </div>
                     </div>
                 </div>
-            </div>                             
+            </div>
 </body>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
 </script>

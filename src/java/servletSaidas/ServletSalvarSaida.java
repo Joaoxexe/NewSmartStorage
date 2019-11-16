@@ -13,9 +13,9 @@ import dao.DAOSaidas;
 import entidades.Movimentacoes;
 import entidades.Saidas;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.math.BigInteger;
 import java.util.Date;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -75,6 +75,11 @@ public class ServletSalvarSaida extends HttpServlet {
    
         response.sendRedirect("Movimentacoes/listarMovimentacoes.jsp");     
     
+    }
+    
+    public List<Saidas> listarSadias(){
+        DAOSaidas ds = new DAOSaidas();
+        return ds.listarSaidas();
     }
     
 

@@ -120,7 +120,7 @@
                                     <td>
                                         <%=funcionarios.getNumeroEnderecoFuncionario()%>
                                     </td>
-                                    
+
                                     <td>
                                         <%=funcionarios.getIdEndereco().getCepEndereco() %>
                                     </td>
@@ -179,27 +179,33 @@
                             <div class="col-md-8 text-center">
                                 <input type="password" name="senha">
                             </div>
-                            
+
                             <div class="col-md-4 text-center">
                                 <label for="nome mr-2">E-mail</label>
                             </div>
                             <div class="col-md-8 text-center">
                                 <input type="text" name="email">
                             </div>
-                            
+
                             <div class="col-md-4 text-center">
                                 <label for="nome mr-2">Telefone</label>
                             </div>
                             <div class="col-md-8 text-center">
                                 <input type="text" maxlength="14" name="telefone" onkeydown="javascript: fMasc( this, mTel );">
                             </div>
-                            
+
                             <div class="col-md-4 text-center">
                                 <label for="nome mr-2">Sexo</label>
                             </div>
                             <div class="col-md-8 text-center">
-                                <input type="text" name="sexo">
-                            </div>        
+                                <form>
+                                    <INPUT TYPE="RADIO" NAME="sexo" VALUE="1"> Feminino
+                                    <INPUT TYPE="RADIO" NAME="sexo" VALUE="2"> Masculino
+                                    <br>
+                                    <INPUT TYPE="RADIO" NAME="sexo" VALUE="3"> Outros
+                                    <br>
+                                </form>
+                            </div>
 
                             <div class="col-md-4 text-center">
                                 <label for="nome mr-2">Nº Endereço</label>
@@ -214,7 +220,7 @@
                             <div class="col-md-8 text-center">
                                 <select name="idEnd">
                                     <option selected="selected">Selecione</option>
-                                    <%
+                                            <%
                                                 ServletSalvarFuncionario ssf1 = new ServletSalvarFuncionario();
                                                 List<Enderecos> listaEnd1 = ssf1.listarEnderecos();
 
@@ -232,7 +238,7 @@
                                 </select>
                             </div>
                             <div class="modal-footer">
-                                <input type="submit" class="btn btn-primary" value="Salvar Funcionario">                    
+                                <input type="submit" class="btn btn-primary" value="Salvar Funcionario">
                                 <a href="../Enderecos/salvarEndereco.jsp" class="btn btn-primary">Novo Endereço</a>
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                             </div>
@@ -241,157 +247,162 @@
                 </div>
             </div>
         </div>
-    
 
-    <!-- Editar -->
-    <div class="modal fade" id="EditarModal" tabindex="-1" role="dialog" aria-labelledby="EditarModalTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="EditarModalLongTitle">Editar Funcionario</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body row">
-                    <form action="../ServletAlterarFuncionario" method="post">
-                        <div class="modal-body row">
-                            <div class="col-md-4 text-center">
-                                <label for="nome mr-2">ID</label>
-                            </div>
-                            <div class="col-md-8 text-center">
-                                <input type="text" name="id" placeholder="Entre com um ID Existente">
-                            </div>
+        <!-- Editar -->
+        <div class="modal fade" id="EditarModal" tabindex="-1" role="dialog" aria-labelledby="EditarModalTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="EditarModalLongTitle">Editar Funcionario</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body row">
+                        <form action="../ServletAlterarFuncionario" method="post">
+                            <div class="modal-body row">
+                                <div class="col-md-4 text-center">
+                                    <label for="nome mr-2">ID</label>
+                                </div>
+                                <div class="col-md-8 text-center">
+                                    <input type="text" name="id" placeholder="Entre com um ID Existente">
+                                </div>
 
-                            <div class="col-md-4 text-center">
-                                <label for="nome mr-2">Nome Funcionario</label>
-                            </div>
-                            <div class="col-md-8 text-center">
-                                <input type="text" name="nome">
-                            </div>
+                                <div class="col-md-4 text-center">
+                                    <label for="nome mr-2">Nome Funcionario</label>
+                                </div>
+                                <div class="col-md-8 text-center">
+                                    <input type="text" name="nome">
+                                </div>
 
-                            <div class="col-md-4 text-center">
-                                <label for="nome mr-2">CPF</label>
-                            </div>
-                            <div class="col-md-8 text-center">
-                                <input type="text" maxlength="14" name="cpf" onkeydown="javascript: fMasc( this, mCPF );">
-                            </div>
+                                <div class="col-md-4 text-center">
+                                    <label for="nome mr-2">CPF</label>
+                                </div>
+                                <div class="col-md-8 text-center">
+                                    <input type="text" maxlength="14" name="cpf" onkeydown="javascript: fMasc( this, mCPF );">
+                                </div>
 
-                            <div class="col-md-4 text-center">
-                                <label for="nome mr-2">Data Nascimento</label>
-                            </div>
-                            <div class="col-md-8 text-center">
-                                <input type="text" name="data" id="outra_data" maxlength="10" onkeypress="mascaraData( this, event )" />
-                            </div>
+                                <div class="col-md-4 text-center">
+                                    <label for="nome mr-2">Data Nascimento</label>
+                                </div>
+                                <div class="col-md-8 text-center">
+                                    <input type="text" name="data" id="outra_data" maxlength="10" onkeypress="mascaraData( this, event )" />
+                                </div>
 
-                            <div class="col-md-4 text-center">
-                                <label for="nome mr-2">Login</label>
-                            </div>
-                            <div class="col-md-8 text-center">
-                                <input type="text" name="login">
-                            </div>
+                                <div class="col-md-4 text-center">
+                                    <label for="nome mr-2">Login</label>
+                                </div>
+                                <div class="col-md-8 text-center">
+                                    <input type="text" name="login">
+                                </div>
 
-                            <div class="col-md-4 text-center">
-                                <label for="nome mr-2">Senha</label>
-                            </div>
-                            <div class="col-md-8 text-center">
-                                <input type="password" name="senha">
-                            </div>
-                            
-                            <div class="col-md-4 text-center">
-                                <label for="nome mr-2">E-mail</label>
-                            </div>
-                            <div class="col-md-8 text-center">
-                                <input type="text" name="email">
-                            </div>
-                            
-                            <div class="col-md-4 text-center">
-                                <label for="nome mr-2">Telefone</label>
-                            </div>
-                            <div class="col-md-8 text-center">
-                                <input type="text" maxlength="14" name="telefone" onkeydown="javascript: fMasc( this, mTel );">
-                            </div>
-                            
-                            <div class="col-md-4 text-center">
-                                <label for="nome mr-2">Sexo</label>
-                            </div>
-                            <div class="col-md-8 text-center">
-                                <input type="text" name="sexo">
-                            </div>        
+                                <div class="col-md-4 text-center">
+                                    <label for="nome mr-2">Senha</label>
+                                </div>
+                                <div class="col-md-8 text-center">
+                                    <input type="password" name="senha">
+                                </div>
 
-                            <div class="col-md-4 text-center">
-                                <label for="nome mr-2">Nº Endereço</label>
-                            </div>
-                            <div class="col-md-8 text-center">
-                                <input type="text" name="numeroEnd">
-                            </div>
+                                <div class="col-md-4 text-center">
+                                    <label for="nome mr-2">E-mail</label>
+                                </div>
+                                <div class="col-md-8 text-center">
+                                    <input type="text" name="email">
+                                </div>
 
-                            <div class="col-md-4 text-center">
-                                <label for="nome mr-2">Endereço</label>
-                            </div>
-                            <div class="col-md-8 text-center">
-                                <select name="idEnd">
-                                    <option selected="selected">Selecione</option>
-                                    <%
+                                <div class="col-md-4 text-center">
+                                    <label for="nome mr-2">Telefone</label>
+                                </div>
+                                <div class="col-md-8 text-center">
+                                    <input type="text" maxlength="14" name="telefone" onkeydown="javascript: fMasc( this, mTel );">
+                                </div>
+
+                                <div class="col-md-4 text-center">
+                                    <label for="nome mr-2">Sexo</label>
+                                </div>
+                                <div class="col-md-8 text-center">
+                                    <form>
+                                        <INPUT TYPE="RADIO" NAME="sexo" VALUE="1"> Feminino
+                                        <INPUT TYPE="RADIO" NAME="sexo" VALUE="2"> Masculino
+                                        <br>
+                                        <INPUT TYPE="RADIO" NAME="sexo" VALUE="3"> Outros
+                                        <br>
+                                    </form>
+                                </div>
+
+                                <div class="col-md-4 text-center">
+                                    <label for="nome mr-2">Nº Endereço</label>
+                                </div>
+                                <div class="col-md-8 text-center">
+                                    <input type="text" name="numeroEnd">
+                                </div>
+
+                                <div class="col-md-4 text-center">
+                                    <label for="nome mr-2">Endereço</label>
+                                </div>
+                                <div class="col-md-8 text-center">
+                                    <select name="idEnd">
+                                        <option selected="selected">Selecione</option>
+                                            <%
                                                 ServletSalvarFuncionario ssf2 = new ServletSalvarFuncionario();
                                                 List<Enderecos> listaEnd2 = ssf2.listarEnderecos();
 
                                                     for(Enderecos enderecos : listaEnd2){                                                   
                                             %>
-                                        <option value="<%=enderecos.getIdEndereco()%>">
-                                            <%out.print(enderecos.getTipoLogradouroEndereco() + " " +
+                                            <option value="<%=enderecos.getIdEndereco()%>">
+                                                <%out.print(enderecos.getTipoLogradouroEndereco() + " " +
                                                         enderecos.getLogradouroEndereco() + ", " +
                                                         enderecos.getBairroEndereco() + ", " +
                                                         enderecos.getCidadeEndereco() + ", " +
                                                         enderecos.getCepEndereco()); %>
-                                        </option>
+                                            </option>
 
-                                        <%}%>
-                                </select>
+                                            <%}%>
+                                    </select>
+                                </div>
+                                <div class="modal-footer">
+                                    <input type="submit" class="btn btn-primary" value="Alterar Funcionario">
+                                    <a href="../Enderecos/salvarEndereco.jsp" class="btn btn-primary">Novo Endereço</a>
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                </div>
                             </div>
-                            <div class="modal-footer">
-                                <input type="submit" class="btn btn-primary" value="Alterar Funcionario">                    
-                                <a href="../Enderecos/salvarEndereco.jsp" class="btn btn-primary">Novo Endereço</a>
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                            </div>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
                 </div>
-            </div> 
+            </div>
         </div>
-    </div>
 
-    <!-- Excluir -->
-    <div class="modal fade" id="ExcluirModal" tabindex="-1" role="dialog" aria-labelledby="ExcluirModalTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="EditarModalLongTitle">Excluir Funcionario</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body row">
-                    <form action="../ServletExcluirFuncionario" method="post">
-                        <div class="modal-body row">
-                            <div class="col-md-4 text-center">
-                                <label for="nome mr-2">ID</label>
-                            </div>
-                            <div class="col-md-8 text-center">
-                                <input type="text" name="id" placeholder="Entre com um ID Existente">
-                            </div>
+        <!-- Excluir -->
+        <div class="modal fade" id="ExcluirModal" tabindex="-1" role="dialog" aria-labelledby="ExcluirModalTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="EditarModalLongTitle">Excluir Funcionario</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body row">
+                        <form action="../ServletExcluirFuncionario" method="post">
+                            <div class="modal-body row">
+                                <div class="col-md-4 text-center">
+                                    <label for="nome mr-2">ID</label>
+                                </div>
+                                <div class="col-md-8 text-center">
+                                    <input type="text" name="id" placeholder="Entre com um ID Existente">
+                                </div>
 
-                            <div class="modal-footer" class="text-right">
-                                <input type="submit" class="btn btn-primary" value="Remover">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                <div class="modal-footer" class="text-right">
+                                    <input type="submit" class="btn btn-primary" value="Remover">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                </div>
                             </div>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 </body>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
 </script>

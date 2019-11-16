@@ -11,7 +11,6 @@
 <%@page import="servletFuncionarios.ServletSalvarFuncionario"%>
 <%@page import="entidades.Funcionarios"%>
 <%@page import="java.util.List"%>
-<%@page import="servletMovimentacoes.ServletMovimentacoes"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -27,8 +26,9 @@
     <link rel="stylesheet" href="../css/font-awesome-all.min.css">
     <link rel="stylesheet" href="../css/loading.css">
     <link rel="stylesheet" href="../css/table.css">
-    <link href="https://fonts.googleapis.com/css?family=Teko|Orbitron|Turret+Road&display=swap" rel="stylesheet">   
+    <link href="https://fonts.googleapis.com/css?family=Teko|Orbitron|Turret+Road&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <div id="loading" class="background-loader">
         <div class="loader">
@@ -37,7 +37,7 @@
             <div class="inner three"></div>
         </div>
     </div>
-    
+
     <div class="text-left">
         <a role="button" href="../index.html" class="btn btn-info">
             <i class="fas fa-chevron-left"></i> Pagina Inicial
@@ -48,12 +48,12 @@
         <div class="tbl-header">
             <table cellpadding="0" cellspacing="0" border="0">
                 <thead>
-                    <tr>                       
+                    <tr>
                         <th>Data da Saida</th>
                         <th>Quantidade</th>
                         <th>Valor Unitario</th>
                         <th>Funcionario</th>
-                        <th>Cliente</th>                       
+                        <th>Cliente</th>
                     </tr>
                 </thead>
             </table>
@@ -63,71 +63,71 @@
                 <table cellpadding="0" cellspacing="0" border="0">
                     <tr>
                         <td>
-                            Data da saida: <input type="text" name="data" id="outra_data" maxlength="10" onkeypress="mascaraData( this, event )" />
-                        </td> 
-                        <td>
-                            Quantidade: <input type ="text" name="qtde">
+                            Data da saida:
+                            <input type="text" name="data" id="outra_data" maxlength="10" onkeypress="mascaraData( this, event )" />
                         </td>
                         <td>
-                            Valor Unitário: <input type="text" name="valor">  
+                            Quantidade:
+                            <input type="text" name="qtde">
                         </td>
                         <td>
-                            Selecione o Funcionario: 
+                            Valor Unitário:
+                            <input type="text" name="valor">
+                        </td>
+                        <td>
+                            Selecione o Funcionario:
                             <select name="idFuncionario">
-                                    <option selected="selected">Selecione</option>
-                                            <%
+                                <option selected="selected">Selecione</option>
+                                <%
                                                 ServletSalvarFuncionario ssf = new ServletSalvarFuncionario();
                                                 List<Funcionarios> getFuncs = ssf.listarFuncionarios();
-                                                
+
                                                     for(Funcionarios funcionarios : getFuncs){ 
                                             %>
-                                        <option value="<%=funcionarios.getIdFuncionario() %>">
-                                            <%out.print(funcionarios.getNmFuncionario()); %>
-                                        </option>
-                                        <%}%>
-                             </select>
+                                    <option value="<%=funcionarios.getIdFuncionario() %>">
+                                        <%out.print(funcionarios.getNmFuncionario()); %>
+                                    </option>
+                                    <%}%>
+                            </select>
                         </td>
-                        
                         <td>
-                            Selecione o Cliente: 
+                            Selecione o Cliente:
                             <select name="idCliente">
-                                    <option selected="selected">Selecione</option>
+                                <option selected="selected">Selecione</option>
                                             <%
                                                 ServletSalvarCliente ssc = new ServletSalvarCliente();
                                                 List<Clientes> getCli = ssc.listarClientes();
-                                                
+
                                                     for(Clientes clientes : getCli){ 
                                             %>
-                                        <option value="<%=clientes.getIdCliente()%>">
-                                            <%out.print(clientes.getNmCliente()); %>
-                                        </option>
-                                        <%}%>
-                             </select>
+                                    <option value="<%=clientes.getIdCliente()%>">
+                                        <%out.print(clientes.getNmCliente()); %>
+                                    </option>
+                                    <%}%>
+                            </select>
                         </td>
-                        
                         <td>
-                            Selecione o Produto: 
+                            Selecione o Produto:
                             <select name="idProduto">
-                                    <option selected="selected">Selecione</option>
+                                <option selected="selected">Selecione</option>
                                             <%
                                                 ServletSalvarProduto ssp = new ServletSalvarProduto();
                                                 List<Produtos> getProds = ssp.listarProdutos();
-                                                
+
                                                     for(Produtos produtos : getProds){ 
                                             %>
-                                        <option value="<%=produtos.getIdProduto()%>">
-                                            <%out.print(produtos.getNmProduto()); %>
-                                        </option>
-                                        <%}%>
-                             </select>
+                                    <option value="<%=produtos.getIdProduto()%>">
+                                        <%out.print(produtos.getNmProduto()); %>
+                                    </option>
+                                    <%}%>
+                            </select>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <input type="submit"  class="btn btn-primary" value="Confirmar Saida">
-
+                            <input type="submit" class="btn btn-primary" value="Confirmar Saida">
                         </td>
-                    </tr>                                        
+                    </tr>
                 </table>
             </form>
         </div>
@@ -138,18 +138,19 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script src="../js/font-awesome-min.js"></script>
 <script src="css/font-awesome-min.js"></script>
-    <script>
-        $(document).ready(function() {
-            setTimeout(() => {
-                $('#loading').remove();
-            }, 1000);
+<script>
+    $(document).ready(function() {
+        setTimeout(() => {
+            $('#loading').remove();
+        }, 1000);
 
-            $(window).on("load resize", function() {
-                var scrollWidth = $('.tbl-content').width() - $('.tbl-content table').width();
-                $('.tbl-header').css({
-                    'padding-right': scrollWidth
-                });
-            }).resize();
-        });
-    </script>
+        $(window).on("load resize", function() {
+            var scrollWidth = $('.tbl-content').width() - $('.tbl-content table').width();
+            $('.tbl-header').css({
+                'padding-right': scrollWidth
+            });
+        }).resize();
+    });
+</script>
+
 </html>
