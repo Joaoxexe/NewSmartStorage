@@ -3,58 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/João%20Victor/Desktop/aps/NewSmartStorage/src/java/dao/DAOProdutos.java</file>
-            <file>file:/C:/Users/João%20Victor/Desktop/aps/NewSmartStorage/src/java/servletFuncionarios/ServletSalvarFuncionario.java</file>
-            <file>file:/C:/Users/João%20Victor/Desktop/aps/NewSmartStorage/web/images/home.png</file>
-            <file>file:/C:/Users/João%20Victor/Desktop/aps/NewSmartStorage/src/java/servletClientes/ServletAlterarCliente.java</file>
-            <file>file:/C:/Users/João%20Victor/Desktop/aps/NewSmartStorage/src/java/dao/DAOSaidas.java</file>
-            <file>file:/C:/Users/João%20Victor/Desktop/aps/NewSmartStorage/web/Entradas/salvarEntrada.jsp</file>
-            <file>file:/C:/Users/João%20Victor/Desktop/aps/NewSmartStorage/src/java/servletFornecedores/ServletExcluirFornecedor.java</file>
-            <file>file:/C:/Users/João%20Victor/Desktop/aps/NewSmartStorage/src/java/servletProdutos/ServletListarProduto.java</file>
-            <file>file:/C:/Users/João%20Victor/Desktop/aps/NewSmartStorage/src/java/servletFuncionarios/ServletAlterarFuncionario.java</file>
-            <file>file:/C:/Users/João%20Victor/Desktop/aps/NewSmartStorage/web/Fornecedores/css/table.css</file>
-            <file>file:/C:/Users/João%20Victor/Desktop/aps/NewSmartStorage/web/Enderecos/css/table.css</file>
-            <file>file:/C:/Users/João%20Victor/Desktop/aps/NewSmartStorage/src/java/servletEntradas/ServletSalvarEntrada.java</file>
-            <file>file:/C:/Users/João%20Victor/Desktop/aps/NewSmartStorage/src/java/dao/DAOFuncionario.java</file>
-            <file>file:/C:/Users/João%20Victor/Desktop/aps/NewSmartStorage/web/Saidas/css/font-awesome-min.js</file>
-            <file>file:/C:/Users/João%20Victor/Desktop/aps/NewSmartStorage/src/java/servletSaidas/ServletSalvarSaida.java</file>
             <file>file:/C:/Users/João%20Victor/Desktop/aps/NewSmartStorage/src/java/dao/DAOControl.java</file>
-            <file>file:/C:/Users/João%20Victor/Desktop/aps/NewSmartStorage/src/java/servletClientes/ServletExcluirCliente.java</file>
-            <file>file:/C:/Users/João%20Victor/Desktop/aps/NewSmartStorage/web/Funcionarios/listarFuncionarios.jsp</file>
-            <file>file:/C:/Users/João%20Victor/Desktop/aps/NewSmartStorage/src/java/servletFuncionarios/ServletExcluirFuncionario.java</file>
-            <file>file:/C:/Users/João%20Victor/Desktop/aps/NewSmartStorage/src/java/servletEnderecos/ServletSalvarEndereco.java</file>
-            <file>file:/C:/Users/João%20Victor/Desktop/aps/NewSmartStorage/src/java/servletProdutos/ServletExcluirProduto.java</file>
-            <file>file:/C:/Users/João%20Victor/Desktop/aps/NewSmartStorage/src/java/dao/DAOCodigoBarras.java</file>
-            <file>file:/C:/Users/João%20Victor/Desktop/aps/NewSmartStorage/src/java/servletFornecedores/ServletAlterarFornecedor.java</file>
-            <file>file:/C:/Users/João%20Victor/Desktop/aps/NewSmartStorage/src/conf/persistence.xml</file>
-            <file>file:/C:/Users/João%20Victor/Desktop/aps/NewSmartStorage/web/Clientes/css/table.css</file>
-            <file>file:/C:/Users/João%20Victor/Desktop/aps/NewSmartStorage/src/java/entidades/Entradas.java</file>
-            <file>file:/C:/Users/João%20Victor/Desktop/aps/NewSmartStorage/web/css/table.css</file>
-            <file>file:/C:/Users/João%20Victor/Desktop/aps/NewSmartStorage/src/java/servletClientes/ServletSalvarCliente.java</file>
-            <file>file:/C:/Users/João%20Victor/Desktop/aps/NewSmartStorage/src/java/servletProdutos/ServletAlterarProduto.java</file>
-            <file>file:/C:/Users/João%20Victor/Desktop/aps/NewSmartStorage/web/Clientes/listarClientes.jsp</file>
-            <file>file:/C:/Users/João%20Victor/Desktop/aps/NewSmartStorage/src/java/dao/DAOEnderecos.java</file>
-            <file>file:/C:/Users/João%20Victor/Desktop/aps/NewSmartStorage/web/Fornecedores/listarFornecedores.jsp</file>
-            <file>file:/C:/Users/João%20Victor/Desktop/aps/NewSmartStorage/src/java/servletCodigoB/ServletSalvarCodigoB.java</file>
-            <file>file:/C:/Users/João%20Victor/Desktop/aps/NewSmartStorage/src/java/dao/DAOFornecedores.java</file>
-            <file>file:/C:/Users/João%20Victor/Desktop/aps/NewSmartStorage/web/CodigoBarras/salvarCodigoB.jsp</file>
-            <file>file:/C:/Users/João%20Victor/Desktop/aps/NewSmartStorage/web/Movimentacoes/listarMovimentacoes.jsp</file>
-            <file>file:/C:/Users/João%20Victor/Desktop/aps/NewSmartStorage/src/java/servletFornecedores/ServletSalvarFornecedor.java</file>
-            <file>file:/C:/Users/João%20Victor/Desktop/aps/NewSmartStorage/web/Saidas/salvarSaida.jsp</file>
-            <file>file:/C:/Users/João%20Victor/Desktop/aps/NewSmartStorage/web/Enderecos/salvarEndereco.jsp</file>
-            <file>file:/C:/Users/João%20Victor/Desktop/aps/NewSmartStorage/src/java/servletFornecedores/ServletListarFornecedores.java</file>
-            <file>file:/C:/Users/João%20Victor/Desktop/aps/NewSmartStorage/web/Produtos/css/table.css</file>
-            <file>file:/C:/Users/João%20Victor/Desktop/aps/NewSmartStorage/src/java/entidades/Enderecos.java</file>
-            <file>file:/C:/Users/João%20Victor/Desktop/aps/NewSmartStorage/web/Produtos/listarProdutos.jsp</file>
-            <file>file:/C:/Users/João%20Victor/Desktop/aps/NewSmartStorage/web/Clientes/css/loading.css</file>
-            <file>file:/C:/Users/João%20Victor/Desktop/aps/NewSmartStorage/src/java/dao/DAOEntradas.java</file>
-            <file>file:/C:/Users/João%20Victor/Desktop/aps/NewSmartStorage/src/java/dao/DAOMovimentacoes.java</file>
-            <file>file:/C:/Users/João%20Victor/Desktop/aps/NewSmartStorage/web/index.html</file>
-            <file>file:/C:/Users/João%20Victor/Desktop/aps/NewSmartStorage/web/Fornecedores/css/font-awesome-min.js</file>
-            <file>file:/C:/Users/João%20Victor/Desktop/aps/NewSmartStorage/src/java/dao/DAOClientes.java</file>
-            <file>file:/C:/Users/João%20Victor/Desktop/aps/NewSmartStorage/src/java/servletProdutos/ServletSalvarProduto.java</file>
-            <file>file:/C:/Users/João%20Victor/Desktop/aps/NewSmartStorage/src/java/servletMovimentacoes/ServletMovimentacoes.java</file>
-            <file>file:/C:/Users/João%20Victor/Desktop/aps/NewSmartStorage/web/Fornecedores/css/bootstrap.css</file>
+            <file>file:/C:/Users/João%20Victor/Desktop/aps/NewSmartStorage/src/conf/MANIFEST.MF</file>
         </group>
     </open-files>
 </project-private>

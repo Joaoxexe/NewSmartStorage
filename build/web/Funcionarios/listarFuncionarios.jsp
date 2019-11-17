@@ -4,6 +4,7 @@
     Author     : João Victor
 --%>
 
+<%@page import="java.text.SimpleDateFormat"%>
 <%@page import="entidades.Enderecos"%>
 <%@page import="entidades.Funcionarios"%>
 <%@page import="java.util.List"%>
@@ -100,7 +101,10 @@
                                         <%=funcionarios.getCpfFuncionario()%>
                                     </td>
                                     <td>
-                                        <%=funcionarios.getDtNascimentoFuncionario()%>
+                                        <%
+                                            SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+                                            out.print(formato.format(funcionarios.getDtNascimentoFuncionario()));
+                                        %>
                                     </td>
                                     <td>
                                         <%=funcionarios.getLoginFuncionario()%>

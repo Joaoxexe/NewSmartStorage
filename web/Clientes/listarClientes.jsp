@@ -4,6 +4,7 @@
     Author     : João Victor
 --%>
 
+<%@page import="java.text.SimpleDateFormat"%>
 <%@page import="entidades.Enderecos"%>
 <%@page import="entidades.Clientes"%>
 <%@page import="java.util.List"%>
@@ -105,7 +106,10 @@
                                         <%=clientes.getSexoCliente() %>
                                     </td>
                                     <td>
-                                        <%=clientes.getDtNascimentoCliente() %>
+                                        <%
+                                            SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+                                            out.print(formato.format(clientes.getDtNascimentoCliente()));
+                                        %>
                                     </td>
                                 </tr>
                                 <%}%>
